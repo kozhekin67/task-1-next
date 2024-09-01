@@ -4,13 +4,13 @@ import cx from 'classnames';
 
 import s from './Button.module.scss';
 
-const Button = ({ className, type }) => {
+const Button = ({ className, type, text }) => {
   return (
     <button
       className={cx(s.root, className)}
       type={type} // eslint-disable-line
     >
-      Кнопка
+      {text}
     </button>
   );
 };

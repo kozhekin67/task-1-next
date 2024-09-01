@@ -1,3 +1,40 @@
-@function clampSize($min, $max) {
-  @return max(#{$min}px,#{$max});
+// @function clampSize($min, $max) {
+//   @return max(#{$min}px, #{$max});
+// }
+
+@mixin dekstop {
+  @media (width >= 920px) and (width <= 1399px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (width <= 919px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (width <= 530px) {
+    @content;
+  }
+}
+
+@mixin event-selectors {
+  @media (width >= 920px) {
+    @content;
+  }
+}
+
+@mixin subtitle-style {
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 122%;
+}
+
+@mixin travel-history-text-style {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 142%;
+  color: $white-color;
 }
