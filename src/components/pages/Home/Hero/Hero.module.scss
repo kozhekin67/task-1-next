@@ -1,0 +1,96 @@
+.heroBlock {
+  background:
+    linear-gradient(180deg, rgb(0 0 0 / 40%) 0%, rgb(0 0 0 / 0%) 39.9%),
+    linear-gradient(0deg, rgb(0 0 0 / 30%), rgb(0 0 0 / 30%)),
+    url('~public/images/headerPhoto.png') no-repeat center center;
+  background-size: cover;
+}
+
+.title {
+  width: 768px;
+  margin-right: auto;
+  margin-left: auto;
+  color: #fff;
+
+  @include tablet {
+    width: 100%;
+    max-width: 550px;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  &__text {
+    padding-top: 210px;
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 109%;
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    @include tablet {
+      padding-top: 140px;
+      font-size: 34px;
+      line-height: 112%;
+      letter-spacing: 0.02em;
+    }
+  }
+}
+
+.introduction {
+  width: 562px;
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 20px;
+  line-height: 142%;
+  color: #fff;
+  text-align: center;
+
+  @include dekstop {
+    width: 39.16%;
+    max-width: 500px;
+  }
+
+  @include tablet {
+    width: 86.11%;
+    margin-top: 40px;
+    font-size: 16px;
+  }
+}
+
+.searchButton {
+  display: block;
+  width: 118px;
+  height: 38px;
+  margin: 46px auto 52px;
+  font-size: 17px;
+  text-align: center;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  transition:
+    color 300ms ease-in,
+    background-color 300ms ease-in;
+
+  @include event_selectors {
+    &:hover {
+      color: #fff;
+      background-color: #efa501;
+      border-radius: 10px;
+    }
+
+    &:active {
+      color: #1b1f2b;
+      background-color: #f8e6be;
+      border-radius: 10px;
+    }
+  }
+
+  @include tablet {
+    width: 114px;
+    height: 33px;
+    margin-bottom: 52px;
+    margin-top: 40px;
+    font-size: 16px;
+  }
+}
