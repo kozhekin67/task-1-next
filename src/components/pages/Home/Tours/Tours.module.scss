@@ -1,0 +1,101 @@
+.sectionBlock {
+  @include sectionBlock;
+}
+
+.sectionName {
+  @include sectionName;
+}
+
+.toursBlock {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      padding-right: 40px;
+      padding-left: 40px;
+      margin-top: 30px;
+    }
+  }
+
+  &__point {
+    @include tablet {
+      line-height: 142%;
+    }
+  }
+
+  &__link {
+    position: relative;
+    font-size: 23px;
+    font-weight: 700;
+    color: #1b1f2b;
+    transition: color 300ms ease-in;
+
+    @include event-selectors {
+      &::before {
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        content: '';
+        background-color: #1b1f2b;
+        transition:
+          transform 300ms ease-in,
+          background-color 300ms ease-in;
+        transform: scale(0, 1);
+      }
+
+      &:hover::before {
+        transform: scale(1, 1);
+      }
+
+      &:focus::before {
+        background-color: #efa501;
+        transform: scale(1, 1);
+      }
+
+      &:focus {
+        color: #efa501;
+      }
+    }
+
+    @include tablet {
+      font-size: 16px;
+
+      &::before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 0%;
+        content: '';
+        background-color: #1b1f2b;
+        transition: all 300ms ease-in;
+      }
+
+      &:focus {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 142%;
+      }
+    }
+  }
+}
+
+.tourCard__photo {
+  position: absolute;
+  width: auto;
+  height: 100%; 
+  transition: transform 300ms ease-in-out;
+} 

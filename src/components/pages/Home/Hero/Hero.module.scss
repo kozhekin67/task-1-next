@@ -4,6 +4,11 @@
     linear-gradient(0deg, rgb(0 0 0 / 30%), rgb(0 0 0 / 30%)),
     url('~public/images/headerPhoto.png') no-repeat center center;
   background-size: cover;
+  padding-bottom: 70px;
+
+  @include tablet {
+    padding-bottom: 5px;
+  }
 }
 
 .title {
@@ -62,7 +67,7 @@
   display: block;
   width: 118px;
   height: 38px;
-  margin: 46px auto 52px;
+  margin: 46px auto;
   font-size: 17px;
   text-align: center;
   background-color: #fff;
@@ -89,7 +94,6 @@
   @include tablet {
     width: 114px;
     height: 33px;
-    margin-bottom: 52px;
     margin-top: 40px;
     font-size: 16px;
   }
