@@ -4,9 +4,8 @@ import cx from 'classnames';
 import Link from 'next/link';
 import { string } from 'prop-types';
 
-import navigationPoints from './NavigationPoints/navigationPoints';
-
-import YourTur from './YourTour.svg';
+import YourTur from 'public/images/svg/YourTour.svg';
+import navigationPoints from 'src/stubs/navigationPoints';
 
 import s from './Header.module.scss';
 

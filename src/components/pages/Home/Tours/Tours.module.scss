@@ -1,0 +1,277 @@
+.sectionBlock {
+  @include sectionBlock;
+}
+
+.sectionName {
+  @include sectionName;
+}
+
+.toursBlock {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      padding-right: 40px;
+      padding-left: 40px;
+      margin-top: 30px;
+    }
+  }
+
+  &__point {
+    @include tablet {
+      line-height: 142%;
+    }
+  }
+
+  &__link {
+    position: relative;
+    font-size: 23px;
+    font-weight: 700;
+    color: #1b1f2b;
+    transition: color 300ms ease-in;
+
+    @include event-selectors {
+      &::before {
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        content: '';
+        background-color: #1b1f2b;
+        transition:
+          transform 300ms ease-in,
+          background-color 300ms ease-in;
+        transform: scale(0, 1);
+      }
+
+      &:hover::before {
+        transform: scale(1, 1);
+      }
+
+      &:focus::before {
+        background-color: #efa501;
+        transform: scale(1, 1);
+      }
+
+      &:focus {
+        color: #efa501;
+      }
+    }
+
+    @include tablet {
+      font-size: 16px;
+
+      &::before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 0%;
+        content: '';
+        background-color: #1b1f2b;
+        transition: all 300ms ease-in;
+      }
+
+      &:focus {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 142%;
+      }
+    }
+  }
+}
+
+.tourCards {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  justify-content: space-between;
+  width: 1170px;
+  margin-top: 107px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include dekstop {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    width: 89.65%;
+    overflow: hidden;
+  }
+
+  @include tablet {
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: space-between;
+    width: 88.61%;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.tourCard {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 370px;
+  height: 531px;
+  overflow: hidden;
+  border-radius: 50px;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: linear-gradient(
+      360deg,
+      rgb(0 0 0 / 40%) 0%,
+      rgb(0 0 0 / 6%) 48.44%,
+      rgb(0 0 0 / 50%) 100%
+    );
+    border-radius: 50px;
+  }
+
+  @include event-selectors {
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover &__photo {
+      transform: scale(1.3);
+    }
+
+    &:hover .detailedButton {
+      background: #286562;
+    }
+  }
+
+  @include dekstop {
+    width: 48.9%;
+  }
+
+  @include tablet {
+    width: 48%;
+    height: 318px;
+    border-radius: 20px;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: '';
+      background: linear-gradient(
+        360deg,
+        rgb(0 0 0 / 40%) 0%,
+        rgb(0 0 0 / 6%) 48.44%,
+        rgb(0 0 0 / 50%) 100%
+      );
+      border-radius: 20px;
+    }
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+
+  &__photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 300ms ease-in-out;
+  }
+
+  &__conntent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    height: 531px;
+    padding: 50px 80px 50px 50px;
+
+    @include dekstop {
+      padding: 50px;
+    }
+
+    @include tablet {
+      height: 318px;
+      padding: 25px;
+    }
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    align-self: stretch;
+    justify-content: flex-end;
+
+    @include tablet {
+      gap: 13px;
+    }
+  }
+
+  &__subtitleSection {
+    z-index: 1;
+
+    @include subtitle-style;
+
+    font-style: normal;
+    color: #fff;
+
+    @include tablet {
+      font-size: 23px;
+      font-weight: 700;
+      line-height: 120%;
+      letter-spacing: 0.92px;
+    }
+  }
+
+  &__cost {
+    z-index: 1;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 142%;
+    color: #fff;
+    letter-spacing: -0.01em;
+
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+
+  &__detail {
+    z-index: 1;
+    display: flex;
+    margin-bottom: -7px;
+    margin-left: -20px;
+    font-size: 23px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  & .detailedButton {
+    @include detailedButton;
+  }
+}

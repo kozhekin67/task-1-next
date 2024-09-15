@@ -3,6 +3,7 @@ import { string } from 'prop-types';
 import cx from 'classnames';
 import Header from 'components/Header';
 import Hero from './Hero';
+import Tours from './Tours';
 import s from './Home.module.scss';
 
 const Home = ({ className }) => {
@@ -10,12 +11,9 @@ const Home = ({ className }) => {
     <div className={cx(s.root, className)}>
       <Header />
       <Hero />
-      {/* <main className={cx(s.root, className)}>
-        <p>
-          Идейные соображения высшего порядка, а также рамки и место обучения
-          кадров
-        </p>
-      </main> */}
+      <main className={cx(s.mainBlock, className)}>
+        <Tours />
+      </main>
     </div>
   );
 };
