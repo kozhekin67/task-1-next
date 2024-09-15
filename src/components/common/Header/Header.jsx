@@ -5,8 +5,7 @@ import Link from 'next/link';
 import { string } from 'prop-types';
 
 import YourTur from 'public/images/svg/YourTour.svg';
-
-import navigationPoints from '../../../stubs/navigationPoints';
+import navigationPoints from 'src/stubs/navigationPoints';
 
 import s from './Header.module.scss';
 

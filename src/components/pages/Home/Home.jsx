@@ -11,7 +11,7 @@ const Home = ({ className }) => {
     <div className={cx(s.root, className)}>
       <Header />
       <Hero />
-      <main className={cx(s.root, className)}>
+      <main className={cx(s.mainBlock, className)}>
         <Tours />
       </main>
     </div>
