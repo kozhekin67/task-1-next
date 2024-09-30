@@ -8,11 +8,11 @@ import s from 'src/components/pages/Home/Hero/Hero.module.scss';
 
 const Hero = ({ className }) => {
   return (
-    <div className={cx(s.heroBlock, className)}>
-      <div className={cx(s.heroBlock__title, s.title)}>
+    <div className={cx(s.block, className)}>
+      <div className={cx(s.block__title, s.title)}>
         <h1 className={cx(s.title__text)}>Идеальные путешествия существуют</h1>
       </div>
-      <div className={cx(s.heroBlock__introduction, s.introduction)}>
+      <div className={cx(s.block__introduction, s.introduction)}>
         <p>
           Идейные соображения высшего порядка, а также рамки и место обучения
           кадров

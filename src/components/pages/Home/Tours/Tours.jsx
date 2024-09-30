@@ -30,13 +30,13 @@ const Tours = ({ className }) => {
     >
       <div className={cx(s.sectionName)}>
         <h2 className={cx(s.sectionName__title)}>Выбери свой тур</h2>
-        <div className={cx(s.toursBlock)}>
-          <ul className={cx(s.toursBlock__list)}>
+        <div className={cx(s.block)}>
+          <ul className={cx(s.block__list)}>
             {tourOtions.map(({ href, text }) => (
               // eslint-disable-next-line react/jsx-key
-              <li className={cx(s.toursBlock__point)}>
+              <li className={cx(s.block__point)}>
                 <Link
-                  className={cx(s.toursBlock__link)}
+                  className={cx(s.block__link)}
                   href={href}
                 >
                   {text}
@@ -46,25 +46,25 @@ const Tours = ({ className }) => {
           </ul>
         </div>
       </div>
-      <div className={cx(s.tourCards)}>
+      <div className={cx(s.cards)}>
         {cardTours.map(({ alt, image }) => (
           // eslint-disable-next-line react/jsx-key
-          <div className={cx(s.tourCard)}>
+          <div className={cx(s.card)}>
             <Image
               src={image}
-              className={cx(s.tourCard__photo)}
+              className={cx(s.card__photo)}
               width={1000}
               height={1000}
               alt={alt}
             />
-            <div className={cx(s.tourCard__conntent)}>
-              <div className={cx(s.tourCard__name)}>
-                <h3 className={cx(s.tourCard__subtitleSection)}>
+            <div className={cx(s.card__conntent)}>
+              <div className={cx(s.card__name)}>
+                <h3 className={cx(s.card__subtitleSection)}>
                   Путешествие в горы
                 </h3>
-                <p className={cx(s.tourCard__cost)}>от 80 000 руб</p>
+                <p className={cx(s.card__cost)}>от 80 000 руб</p>
               </div>
-              <div className={cx(s.tourCard__detail)}>
+              <div className={cx(s.card__detail)}>
                 <Button
                   className={cx(s.detailedButton)}
                   type="submit"
