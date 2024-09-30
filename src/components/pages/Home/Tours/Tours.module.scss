@@ -34,7 +34,7 @@
     }
   }
 
-  &__link {
+  &__selectionButton {
     position: relative;
     font-size: 23px;
     font-weight: 700;
@@ -157,7 +157,7 @@
       transform: scale(1.3);
     }
 
-    &:hover .detailedButton {
+    &:hover .detailedLink {
       background: #286562;
     }
   }
@@ -271,7 +271,7 @@
     color: #fff;
   }
 
-  & .detailedButton {
-    @include detailedButton;
+  & .detailedLink {
+    @include detailedLink;
   }
 }

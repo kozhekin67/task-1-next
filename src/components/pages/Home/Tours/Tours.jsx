@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { string } from 'prop-types';
 
-import tourOtions from 'src/stubs/tourOptions';
+import tourOptions from 'src/stubs/tourOptions';
 import cardTours from 'src/stubs/cardTours';
 
 import Button from 'components/Button';
@@ -32,15 +32,15 @@ const Tours = ({ className }) => {
         <h2 className={cx(s.sectionName__title)}>Выбери свой тур</h2>
         <div className={cx(s.block)}>
           <ul className={cx(s.block__list)}>
-            {tourOtions.map(({ href, text }) => (
+            {tourOptions.map(({ text }) => (
               // eslint-disable-next-line react/jsx-key
               <li className={cx(s.block__point)}>
-                <Link
-                  className={cx(s.block__link)}
-                  href={href}
-                >
-                  {text}
-                </Link>
+                <Button
+                  className={cx(s.block__selectionButton)}
+                  value={text}
+                  text={text}
+                  type="submit"
+                />
               </li>
             ))}
           </ul>
@@ -65,13 +65,12 @@ const Tours = ({ className }) => {
                 <p className={cx(s.card__cost)}>от 80 000 руб</p>
               </div>
               <div className={cx(s.card__detail)}>
-                <Button
-                  className={cx(s.detailedButton)}
-                  type="submit"
-                  value="Подробнее"
-                  text="Подробнее"
-                  image={arrow}
-                />
+                <Link
+                  className={cx(s.detailedLink)}
+                  href="#0"
+                >
+                  Подробнее {arrow}
+                </Link>
               </div>
             </div>
           </div>
