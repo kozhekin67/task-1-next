@@ -13,15 +13,13 @@
 
 .title {
   width: 768px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
   color: #fff;
 
   @include tablet {
     width: 100%;
     max-width: 550px;
-    padding-right: 40px;
-    padding-left: 40px;
+    padding: 0 40px;
   }
 
   &__text {
@@ -43,9 +41,7 @@
 
 .introduction {
   width: 562px;
-  margin-top: 50px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 50px auto 0;
   font-size: 20px;
   line-height: 142%;
   color: #fff;

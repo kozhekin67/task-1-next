@@ -43,14 +43,13 @@
   padding-top: 135px;
 
   @include tablet {
-    padding-top: 75px;
+    padding-top: 77px;
   }
 }
 
 @mixin sectionName {
   width: 100%;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
 
   @include tablet {
     width: 100%;
