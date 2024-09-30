@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { string } from 'prop-types';
 
-import tourOtions from 'src/stubs/tourOptions';
+import tourOptions from 'src/stubs/tourOptions';
 import cardTours from 'src/stubs/cardTours';
 
 import Button from 'components/Button';
@@ -30,48 +30,47 @@ const Tours = ({ className }) => {
     >
       <div className={cx(s.sectionName)}>
         <h2 className={cx(s.sectionName__title)}>Выбери свой тур</h2>
-        <div className={cx(s.toursBlock)}>
-          <ul className={cx(s.toursBlock__list)}>
-            {tourOtions.map(({ href, text }) => (
+        <div className={cx(s.block)}>
+          <ul className={cx(s.block__list)}>
+            {tourOptions.map(({ text }) => (
               // eslint-disable-next-line react/jsx-key
-              <li className={cx(s.toursBlock__point)}>
-                <Link
-                  className={cx(s.toursBlock__link)}
-                  href={href}
-                >
-                  {text}
-                </Link>
+              <li className={cx(s.block__point)}>
+                <Button
+                  className={cx(s.block__selectionButton)}
+                  value={text}
+                  text={text}
+                  type="submit"
+                />
               </li>
             ))}
           </ul>
         </div>
       </div>
-      <div className={cx(s.tourCards)}>
+      <div className={cx(s.cards)}>
         {cardTours.map(({ alt, image }) => (
           // eslint-disable-next-line react/jsx-key
-          <div className={cx(s.tourCard)}>
+          <div className={cx(s.card)}>
             <Image
               src={image}
-              className={cx(s.tourCard__photo)}
+              className={cx(s.card__photo)}
               width={1000}
               height={1000}
               alt={alt}
             />
-            <div className={cx(s.tourCard__conntent)}>
-              <div className={cx(s.tourCard__name)}>
-                <h3 className={cx(s.tourCard__subtitleSection)}>
+            <div className={cx(s.card__conntent)}>
+              <div className={cx(s.card__name)}>
+                <h3 className={cx(s.card__subtitleSection)}>
                   Путешествие в горы
                 </h3>
-                <p className={cx(s.tourCard__cost)}>от 80 000 руб</p>
+                <p className={cx(s.card__cost)}>от 80 000 руб</p>
               </div>
-              <div className={cx(s.tourCard__detail)}>
-                <Button
-                  className={cx(s.detailedButton)}
-                  type="submit"
-                  value="Подробнее"
-                  text="Подробнее"
-                  image={arrow}
-                />
+              <div className={cx(s.card__detail)}>
+                <Link
+                  className={cx(s.detailedLink)}
+                  href="#0"
+                >
+                  Подробнее {arrow}
+                </Link>
               </div>
             </div>
           </div>

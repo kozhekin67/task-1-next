@@ -1,4 +1,4 @@
-.heroBlock {
+.block {
   background:
     linear-gradient(180deg, rgb(0 0 0 / 40%) 0%, rgb(0 0 0 / 0%) 39.9%),
     linear-gradient(0deg, rgb(0 0 0 / 30%), rgb(0 0 0 / 30%)),
@@ -13,15 +13,13 @@
 
 .title {
   width: 768px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
   color: #fff;
 
   @include tablet {
     width: 100%;
     max-width: 550px;
-    padding-right: 40px;
-    padding-left: 40px;
+    padding: 0 40px;
   }
 
   &__text {
@@ -43,9 +41,7 @@
 
 .introduction {
   width: 562px;
-  margin-top: 50px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 50px auto 0;
   font-size: 20px;
   line-height: 142%;
   color: #fff;

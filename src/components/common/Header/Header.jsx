@@ -13,9 +13,9 @@ const Header = ({ className }) => {
   return (
     <header
       id="header"
-      className={cx(s.headerBlock, className)}
+      className={cx(s.block, className)}
     >
-      <nav className={s.headerMenu}>
+      <nav className={s.menu}>
         <div className={s.yourTur}>
           <Link
             href="#header"
@@ -32,7 +32,7 @@ const Header = ({ className }) => {
             />
           </Link>
         </div>
-        <div className={cx(s.headerBlock__siteSections, s.siteSections)}>
+        <div className={cx(s.block__siteSections, s.siteSections)}>
           <ul className={cx(s.siteSections__listSiteSections)}>
             {navigationPoints.map(({ href, text }) => (
               <li>
@@ -46,7 +46,7 @@ const Header = ({ className }) => {
             ))}
           </ul>
         </div>
-        <div className={cx(s.headerBlock__phoneNumber, s.phoneNumber)}>
+        <div className={cx(s.block__phoneNumber, s.phoneNumber)}>
           <p>
             <Link
               className={cx(s.phoneNumber__referenceNumber)}
