@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { string } from 'prop-types';
 
-// import Button from 'components/Button';
+import Form from 'components/Form';
 
 import s from 'src/components/pages/Home/CreateTour/CreateTour.module.scss';
 
@@ -19,6 +19,7 @@ const CreateTour = ({ className }) => {
           <br />а также рамки и место обучения кадров
         </p>
       </div>
+      <Form />
     </section>
   );
 };
