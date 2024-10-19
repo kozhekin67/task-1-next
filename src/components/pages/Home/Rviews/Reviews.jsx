@@ -3,8 +3,6 @@ import cx from 'classnames';
 import Image from 'next/image';
 import { string } from 'prop-types';
 
-// import tourOptions from 'src/stubs/tourOptions';
-// import cardTours from 'src/stubs/cardTours';
 import reviews from 'src/stubs/reviews';
 
 import s from './Reviews.module.scss';
@@ -21,15 +19,16 @@ const Reviews = ({ className }) => {
           путешественников
         </h2>
         <p className={cx(s.sectionName__description)}>
-          Идейные соображения высшего порядка, а также рамки и место обучения
-          кадров
+          Идейные соображения высшего порядка,
+          <br />а также рамки и место обучения кадров
         </p>
       </div>
       <div className={cx(s.reviews__block)}>
         {reviews.map(({ text, userName, tourName, userPhoto, alt }) => (
           // eslint-disable-next-line react/jsx-key
           <div className={cx(s.reviewBlock)}>
-            <p className={cx(s.reviewBlock__text)}>{text}</p>
+            {text}
+            {/* <p className={cx(s.reviewBlock__text)}>{text}</p> */}
             <div className={cx(s.reviewBlock__userBlock)}>
               <div className={cx(s.reviewBlock__userBlockName)}>
                 <h3 className={cx(s.subtitleSection)}>{userName}</h3>
@@ -37,8 +36,8 @@ const Reviews = ({ className }) => {
               </div>
               <Image
                 className={cx(s.reviewBlock__photo)}
-                width={1000}
-                height={1000}
+                width={75}
+                height={75}
                 src={userPhoto}
                 alt={alt}
               />
