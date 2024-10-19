@@ -1,0 +1,112 @@
+.dropdown {
+  position: relative;
+
+  @include tablet {
+    padding: 0;
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 142%;
+  }
+
+  &__button {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    margin-top: 8px;
+    //margin-left: -8px;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 142%;
+    color: #a6a6a6;
+    //appearance: none;
+    background: #f9f7f4;
+    border: 1px solid #f4f0e9;
+    border-radius: 10px;
+    transition:
+      border 300ms ease-in,
+      background-color 300ms ease-in;
+
+    @include event-selectors {
+      &:hover {
+        background: #f4f0e9;
+        border: 1px solid #f4f0e9;
+        border-radius: 10px;
+      }
+
+      &:active {
+        background: #f4f0e9;
+        border: 1px solid #a6a6a6;
+        border-radius: 10px;
+      }
+    }
+
+    @include tablet {
+      height: 46px;
+      padding-top: 11.5px;
+      padding-bottom: 11.5px;
+      padding-left: 10px;
+      font-size: 16px;
+    }
+  }
+
+  &__button_active {
+    color: #1b1f2b;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    width: 26px;
+    height: 26px;
+    pointer-events: none;
+    fill: #1b1f2b;
+
+    @include tablet {
+      top: 12px;
+      right: 10px;
+    }
+  }
+
+  &__list {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    overflow: hidden;
+    color: #1b1f2b;
+    text-align: left;
+    list-style-type: none;
+    background: #f9f7f4;
+    border: 1px solid #f4f0e9;
+    border-radius: 10px;
+  }
+
+  &__listItem {
+    padding: 20px;
+    cursor: pointer;
+    border: 1px solid #f4f0e9;
+    border-bottom: 1px solid #f4f0e9;
+
+    @include event-selectors {
+      &:hover {
+        background: #f4f0e9;
+      }
+    }
+
+    @include tablet {
+      padding-top: 11.5px;
+      padding-bottom: 11.5px;
+      padding-left: 10px;
+    }
+  }
+
+  &__refund {
+    padding: 20px;
+    color: #a6a6a6;
+    cursor: pointer;
+    border: 1px solid #f4f0e9;
+    border-bottom: 1px solid #f4f0e9;
+  }
+}

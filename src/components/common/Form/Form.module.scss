@@ -1,0 +1,373 @@
+.root {
+  position: relative;
+}
+
+.questionnaire {
+  &__field {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 1170px;
+    padding: 70px;
+    margin: 100px auto 0;
+    background: #fff;
+    border-radius: 50px;
+
+    @include dekstop {
+      width: 89.65%;
+      padding: 60px;
+    }
+
+    @include tablet {
+      width: 88.33%;
+      padding: 20px;
+      margin-top: 40px;
+      border-radius: 30px;
+    }
+  }
+}
+
+.dataField {
+  display: block;
+  width: 500px;
+  margin-bottom: 40px;
+  font-size: 20px;
+  color: #1b1f2b;
+
+  @include dekstop {
+    width: 48.75%;
+  }
+
+  @include tablet {
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+
+  // &__name {
+  //     display: block;
+  // }
+
+  &__entry {
+    width: 100%;
+    padding: 20px;
+    margin-top: 8px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 142%;
+    color: #1b1f2b;
+    background: #f9f7f4;
+    border: 1px solid #f4f0e9;
+    border-radius: 10px;
+    transition:
+      border 300ms ease-in,
+      background-color 300ms ease-in;
+
+    &::placeholder {
+      font-family: Roboto, Arial, sans-serif;
+      font-style: normal;
+      color: #a6a6a6;
+    }
+
+    @include event-selectors {
+      &:hover {
+        background: #f4f0e9;
+        border: 1px solid #f4f0e9;
+        border-radius: 10px;
+      }
+
+      &:focus {
+        background: #f4f0e9;
+        border: 1px solid #a6a6a6;
+        border-radius: 10px;
+      }
+    }
+
+    @include tablet {
+      height: 43px;
+      padding: 10px;
+
+      &::placeholder {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.comment {
+  width: 100%;
+  font-size: 20px;
+  line-height: 142%;
+  color: #1b1f2b;
+
+  @include tablet {
+    margin-top: 4px;
+    font-size: 16px;
+  }
+
+  &__field {
+    width: 100%;
+    height: 152px;
+    padding: 1%;
+    margin-top: 8px;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    line-height: 142%;
+    resize: none;
+    background: #f9f7f4;
+    border: 1px solid #f4f0e9;
+    border-radius: 10px;
+    transition:
+      border 300ms ease-in,
+      background-color 300ms ease-in;
+
+    @include event-selectors {
+      &:hover {
+        background: #f4f0e9;
+        border: 1px solid #f4f0e9;
+        border-radius: 10px;
+      }
+
+      &:focus {
+        background: #f4f0e9;
+        border: 1px solid #a6a6a6;
+        border-radius: 10px;
+      }
+    }
+
+    @include tablet {
+      height: 132px;
+    }
+  }
+}
+
+.radioGroup {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 142%;
+
+  @include tablet {
+    margin-top: 22px;
+    font-size: 16px;
+  }
+
+  &__buttons {
+    display: flex;
+    margin-top: 7px;
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+
+    &:not(:first-child) {
+      margin-left: 31px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &::before {
+      box-sizing: border-box;
+      display: inline-block;
+      width: 26px;
+      height: 26px;
+      margin-right: 11px;
+      cursor: pointer;
+      content: '';
+      border: 2px solid #1b1f2b;
+      border-radius: 50%;
+    }
+
+    @include tablet {
+      &::before {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        content: '';
+      }
+    }
+  }
+
+  &__customButton {
+    display: none;
+    margin-left: 11px;
+
+    &:checked + .radioGroup__button::before {
+      background: url('/images/svg/RadioButton.svg') no-repeat center center;
+    }
+
+    @include tablet {
+      &:checked + .radioGroup__button::before {
+        background: url('/images/svg/RadioButtonMobile.svg') no-repeat center
+          center;
+      }
+    }
+  }
+}
+
+.agreements {
+  width: 100%;
+  margin-top: 34px;
+  font-size: 20px;
+
+  @include tablet {
+    display: flex;
+    margin-top: 29px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    line-height: 142%;
+    color: #a6a6a6;
+    letter-spacing: -0.01em;
+
+    &::before {
+      box-sizing: border-box;
+      display: inline-block;
+      width: 26px;
+      height: 26px;
+      margin-right: 19px;
+      cursor: pointer;
+      content: '';
+      border: 2px solid #1b1f2b;
+      border-radius: 5px;
+    }
+
+    @include dekstop {
+      &::before {
+        margin-right: 11px;
+        content: '';
+      }
+    }
+
+    @include tablet {
+      font-size: 16px;
+      letter-spacing: 0;
+
+      &::before {
+        min-width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        margin-bottom: auto;
+        content: '';
+        border-radius: 4px;
+      }
+    }
+  }
+
+  &__customButton {
+    display: none;
+
+    &:checked + .agreements__button::before {
+      background: url('/images/svg/Checkbox.svg') no-repeat center center;
+    }
+
+    @include tablet {
+      &:checked + .agreements__button::before {
+        background: url('/images/svg/CheckboxMobile.svg') no-repeat center
+          center;
+      }
+    }
+  }
+
+  &__contractReference {
+    padding: 0.25em;
+    color: #1b1f2b;
+    transition: color 300ms ease-in;
+
+    @include event-selectors {
+      &:hover {
+        color: black;
+        text-decoration: underline;
+      }
+
+      &:active {
+        color: #286562;
+        text-decoration-line: underline;
+      }
+    }
+  }
+}
+
+.questionnaireButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  margin-top: 30px;
+
+  @include tablet {
+    flex-wrap: wrap;
+    width: 278px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  &__button {
+    width: 235px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 20px;
+    line-height: 142%;
+    border: none;
+    border-radius: 10px;
+
+    @include tablet {
+      width: 133px;
+      padding-top: 12;
+      padding-bottom: 12px;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 142%;
+    }
+  }
+
+  &__button_search {
+    color: #fff;
+    background-color: #286562;
+    transition: background-color 300ms ease-in;
+
+    @include event-selectors {
+      &:hover {
+        color: #fff;
+        background-color: #3b7e7b;
+      }
+
+      &:active {
+        background-color: #627f7e;
+      }
+    }
+
+    @include tablet {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__button_reset {
+    color: #286562;
+    background-color: #e0f0e5;
+    transition: background-color 300ms ease-in;
+
+    @include event-selectors {
+      &:hover {
+        background-color: #f1f3f2;
+      }
+
+      &:active {
+        background-color: #d9dfdb;
+      }
+    }
+  }
+}
