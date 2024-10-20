@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { string } from 'prop-types';
 
+import travelStoris from 'src/stubs/travelStoris';
+
 import Arrow from 'public/images/svg/Arrow.svg';
 
 import s from './TravelStories.module.scss';
@@ -29,44 +31,48 @@ const TravelStories = ({ className }) => {
         </p>
       </div>
       <div className={cx(s.block)}>
-        <div className={cx(s.blockHistory)}>
-          <Image
-            className={cx(s.blockHistory__foto)}
-            // src="img/travel-stories/travel-history-1.png"
-            alt="travel-history-1"
-            width={1000}
-            height={1000}
-          />
-          <div className={cx(s.blockHistory__conntent)}>
-            <div className={cx(s.blockHistory__name)}>
-              <h3 className={cx(s.blockHistory__subtitleSection)}>
-                Автостопом в Стамбул
-              </h3>
-              <p className={cx(s.blockHistory__description)}>
-                Идейные соображения высшего порядка, а также рамки и место
-                обучения кадров обеспечивает широкому кругу (специалистов)
-                участие в формировании новых предложений:
-              </p>
-              <ul className={cx(s.blockHistory__advantages)}>
-                <li className={cx(s.blockHistory__advantage)}>
-                  дешевый транспорт
-                </li>
-                <li className={cx(s.blockHistory__advantage)}>вкусная еда</li>
-                <li className={cx(s.blockHistory__advantage)}>
-                  красивый город.
-                </li>
-              </ul>
-            </div>
-            <div className={cx(s.blockHistory__bottom)}>
-              <div className={cx(s.blockHistory__detail)}>
-                <Link
-                  className={cx(s.detailedLink)}
-                  href="#0"
-                >
-                  Подробнее {arrow}
-                </Link>
+        {travelStoris.map(({ image, alt, advantages, socialNetwork }) => (
+          // eslint-disable-next-line react/jsx-key
+          <div className={cx(s.blockHistory)}>
+            <Image
+              className={cx(s.blockHistory__foto)}
+              src={image}
+              alt={alt}
+              width={1000}
+              height={1000}
+            />
+            <div className={cx(s.blockHistory__conntent)}>
+              <div className={cx(s.blockHistory__name)}>
+                <h3 className={cx(s.blockHistory__subtitleSection)}>
+                  Автостопом в Стамбул
+                </h3>
+                <p className={cx(s.blockHistory__description)}>
+                  Идейные соображения высшего порядка, а также рамки и место
+                  обучения кадров обеспечивает широкому кругу (специалистов)
+                  участие в формировании новых предложений:
+                </p>
+                {advantages}
+                {/* <ul className={cx(s.blockHistory__advantages)}>
+                  <li className={cx(s.blockHistory__advantage)}>
+                    дешевый транспорт
+                  </li>
+                  <li className={cx(s.blockHistory__advantage)}>вкусная еда</li>
+                  <li className={cx(s.blockHistory__advantage)}>
+                    красивый город.
+                  </li>
+                </ul> */}
               </div>
-              {/* <ul class="travel-history__links-social-networks">
+              <div className={cx(s.blockHistory__bottom)}>
+                <div className={cx(s.blockHistory__detail)}>
+                  <Link
+                    className={cx(s.detailedLink)}
+                    href="#0"
+                  >
+                    Подробнее {arrow}
+                  </Link>
+                </div>
+                {socialNetwork}
+                {/* <ul class="travel-history__links-social-networks">
                 <li>
                   <a
                     class="travel-history__social-network-link"
@@ -98,9 +104,11 @@ const TravelStories = ({ className }) => {
                   </a>
                 </li>
               </ul> */}
+              </div>
             </div>
           </div>
-        </div>
+        ))}
+
         {/* <div class="travel-history">
                     <img class="travel-history__foto" src="img/travel-stories/travel-history-2.png" alt="travel-history-2">
                     <div class="travel-history__conntent">
