@@ -6,6 +6,7 @@ import Hero from './Hero';
 import Tours from './Tours';
 import CreateTour from './CreateTour';
 import Reviews from './Rviews/Reviews';
+import TravelPhotos from './TravelPhotos/TravelPhotos';
 import s from './Home.module.scss';
 
 const Home = ({ className }) => {
@@ -17,6 +18,7 @@ const Home = ({ className }) => {
         <Tours />
         <CreateTour />
         <Reviews />
+        <TravelPhotos />
       </main>
     </div>
   );
