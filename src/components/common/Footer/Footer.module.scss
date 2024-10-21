@@ -1,0 +1,102 @@
+.container {
+  background: #f4f0e9;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60.83%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: auto;
+
+  @include dekstop {
+    width: 918px;
+  }
+
+  @include tablet {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding-top: 21px;
+  }
+
+  &__description {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 142%;
+    color: #a6a6a6;
+
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+
+  &__listSocialNetworks {
+    display: flex;
+
+    @include tablet {
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 95%;
+    }
+  }
+
+  &__socialNetworkItem {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-left: 25px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 142%;
+    list-style: none;
+
+    @include tablet {
+      gap: 5px;
+      margin-top: 7px;
+      margin-left: 15px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__socialNetworkIcon {
+    width: 26px;
+    height: 26px;
+  }
+
+  &__socialNetworkLink {
+    position: relative;
+    display: inline-block;
+    color: #1b1f2b;
+
+    @include event-selectors {
+      &::before {
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        content: '';
+        border-bottom: 1px solid #000;
+        transition: transform 300ms ease-in;
+        transform: scale(0);
+      }
+
+      &:hover::before {
+        transform: scale(1);
+      }
+    }
+
+    @include tablet {
+      display: flex;
+      justify-content: center;
+      font-size: 16px;
+      line-height: 142%;
+    }
+  }
+}
