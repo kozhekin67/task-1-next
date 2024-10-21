@@ -40,14 +40,9 @@
 
   @include tablet {
     width: 100%;
-    margin-top: 6px;
-    margin-bottom: 30px;
+    margin: 6px 0 30px;
     font-size: 16px;
   }
-
-  // &__name {
-  //     display: block;
-  // }
 
   &__entry {
     width: 100%;
@@ -151,7 +146,7 @@
   line-height: 142%;
 
   @include tablet {
-    margin-top: 22px;
+    margin-top: 25px;
     font-size: 16px;
   }
 
@@ -220,7 +215,7 @@
 
   @include tablet {
     display: flex;
-    margin-top: 29px;
+    margin-top: 35px;
   }
 
   &__button {
@@ -257,8 +252,7 @@
       &::before {
         min-width: 20px;
         height: 20px;
-        margin-right: 10px;
-        margin-bottom: auto;
+        margin: 0 10px auto 0;
         content: '';
         border-radius: 4px;
       }
@@ -308,14 +302,12 @@
   @include tablet {
     flex-wrap: wrap;
     width: 278px;
-    margin-top: 30px;
-    margin-bottom: 10px;
+    margin-top: 30px 0 10px;
   }
 
   &__button {
     width: 235px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 15px 0;
     font-size: 20px;
     line-height: 142%;
     border: none;
@@ -323,7 +315,6 @@
 
     @include tablet {
       width: 133px;
-      padding-top: 12;
       padding-bottom: 12px;
       font-family: Roboto, Arial, sans-serif;
       font-size: 16px;
@@ -350,8 +341,7 @@
     }
 
     @include tablet {
-      margin-right: 10px;
-      margin-bottom: 10px;
+      margin: 0 10px 10px 0;
     }
   }
 
