@@ -24,9 +24,36 @@
   }
 }
 
+.menu_scroll {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  align-items: center;
+  width: 100%;
+  padding-right: 19.58%;
+  padding-left: 19.58%;
+  // color: #1b1f2b;
+  background: rgb(243 239 232 / 60%);
+  backdrop-filter: blur(27px);
+
+  @include dekstop {
+    z-index: 2;
+    width: 100%;
+    padding-right: 5.6%;
+    padding-left: 5.6%;
+  }
+
+  @include tablet {
+    z-index: 2;
+    width: 100%;
+    padding-right: 5.6%;
+    padding-left: 5.6%;
+  }
+}
+
 .yourTur {
   &__img {
-    fill: #fff;
+    fill: white;
 
     @include tablet {
       width: 133px;
@@ -49,7 +76,7 @@
     }
   }
 
-  &__sectionLink {
+  &__link {
     position: relative;
     color: #fff;
 
@@ -67,6 +94,17 @@
 
       &:hover::before {
         transform: scale(1);
+      }
+    }
+  }
+
+  &__link_scroll {
+    color: #000;
+
+    @include event-selectors {
+      &::before {
+        content: '';
+        border-bottom: 1px solid #000;
       }
     }
   }
