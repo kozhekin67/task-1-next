@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-import 'react-dropdown/style.css';
 import { string } from 'prop-types';
 import cx from 'classnames';
 import { useForm } from 'react-hook-form';
@@ -8,6 +7,7 @@ import { useForm } from 'react-hook-form';
 import fillingFields from 'src/stubs/fillingFields';
 
 import Dropdown from 'components/Dropdown/Dropdown';
+import Button from 'components/Button';
 
 import Link from 'next/link';
 import s from './Form.module.scss';
@@ -139,27 +139,27 @@ const Form = ({ className }) => {
       <div className={cx(s.questionnaireButtons)}>
         <div className={cx(s.questionnaireButtons__searchBlock)}>
           <label htmlFor="button-search">
-            <input
+            <Button
               className={cx(
                 s.questionnaireButtons__button,
                 s.questionnaireButtons__button_search
               )}
               type="submit"
               id="button-search"
-              value="Найти тур"
+              text="Найти тур"
             />
           </label>
         </div>
         <div className={cx(s.questionnaireButtons__resetBlock)}>
           <label htmlFor="button-reset">
-            <input
+            <Button
               className={cx(
                 s.questionnaireButtons__button,
                 s.questionnaireButtons__button_reset
               )}
-              type="submit"
+              type="button"
               id="button-reset"
-              value="Cбросить"
+              text="Cбросить"
             />
           </label>
         </div>

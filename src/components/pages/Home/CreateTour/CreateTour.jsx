@@ -10,7 +10,7 @@ const CreateTour = ({ className }) => {
   return (
     <section
       className={cx(s.sectionBlock, className)}
-      id="questionnaire"
+      id="/questionnaire"
     >
       <div className={cx(s.sectionName)}>
         <h2 className={cx(s.sectionName__title)}>Собери свой тур</h2>

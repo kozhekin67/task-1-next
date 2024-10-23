@@ -6,6 +6,7 @@ import { string } from 'prop-types';
 
 import YourTur from 'public/images/svg/YourTour.svg';
 import navigationPoints from 'src/stubs/navigationPoints';
+import smoothScrolling from 'utils/smoothScrolling';
 
 import s from './Header.module.scss';
 
@@ -30,7 +31,7 @@ const Header = ({ className }) => {
 
   return (
     <header
-      id="header"
+      id="/header"
       className={cx(s.block, className)}
     >
       <nav className={cx(s.menu, show ? s.menu_scroll : '')}>
@@ -38,6 +39,7 @@ const Header = ({ className }) => {
           <Link
             href="#header"
             className={s.yourTur__link}
+            onClick={() => smoothScrolling(`/header`)}
           >
             <YourTur
               className={s.yourTur__img}
@@ -52,14 +54,15 @@ const Header = ({ className }) => {
         </div>
         <div className={cx(s.block__siteSections, s.siteSections)}>
           <ul className={cx(s.siteSections__listSiteSections)}>
-            {navigationPoints.map(({ href, text }) => (
+            {navigationPoints.map(({ text, id }) => (
               <li>
                 <Link
                   className={cx(
                     s.siteSections__link,
                     show ? s.siteSections__link_scroll : ''
                   )}
-                  href={href}
+                  href={`#${id}`}
+                  onClick={() => smoothScrolling(`/${id}`)}
                 >
                   {text}
                 </Link>

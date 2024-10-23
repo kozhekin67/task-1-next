@@ -26,7 +26,7 @@ const Tours = ({ className }) => {
   return (
     <section
       className={cx(s.sectionBlock, className)}
-      id="choosing-tour"
+      id="/choosing-tour"
     >
       <div className={cx(s.sectionName)}>
         <h2 className={cx(s.sectionName__title)}>Выбери свой тур</h2>
