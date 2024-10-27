@@ -53,7 +53,9 @@ const Form = ({ className }) => {
           Направление
           <Dropdown
             className={cx(s.dropdown, className)}
-            name="direction"
+            {...methods.register('direction', {
+              required: true,
+            })}
           />
         </label>
         {fillingFields.map(({ htmlFor, id, text, type, placeholder }) => (
