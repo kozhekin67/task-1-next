@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 import { string } from 'prop-types';
+import { useFormContext } from 'react-hook-form';
 
 import useClickOutside from 'hooks/useClickOutside';
 import dropDownListOptions from 'src/stubs/dropDownListOptions';
@@ -9,7 +10,8 @@ import DropdownArrow from 'public/images/svg/DropdownArrow.svg';
 
 import s from './Dropdown.module.scss';
 
-const Dropdown = ({ className }) => {
+const Dropdown = ({ className, name }) => {
+  const { setValue } = useFormContext();
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState('');
   const placeholder = 'Куда хотите ехать';
@@ -23,8 +25,12 @@ const Dropdown = ({ className }) => {
   const selectingAnItem = (value, label) => {
     if (value === 'reset') {
       setSelectedValue('');
+      setValue(name, '');
+      setIsOpen(() => setIsOpen(false));
     } else {
       setSelectedValue(label);
+      setValue(name, label);
+      setIsOpen(() => setIsOpen(false));
     }
     setIsOpen(!false);
   };
@@ -63,6 +69,7 @@ const Dropdown = ({ className }) => {
 
 Dropdown.propTypes = {
   className: string,
+  name: string.isRequired,
 };
 
 Dropdown.defaultProps = {};

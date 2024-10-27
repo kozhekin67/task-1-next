@@ -22,7 +22,10 @@ const arrow = (
 
 const TravelStories = ({ className }) => {
   return (
-    <section className={cx(s.sectionBlock, className)}>
+    <section
+      className={cx(s.sectionBlock, className)}
+      id="/travel-stories"
+    >
       <div className={cx(s.sectionName)}>
         <h2 className={cx(s.sectionName__title)}>Истории путешествий</h2>
         <p className={cx(s.sectionName__description)}>
