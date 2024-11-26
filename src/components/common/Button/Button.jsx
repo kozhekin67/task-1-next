@@ -19,6 +19,8 @@ const Button = ({ className, type, text, image }) => {
 Button.propTypes = {
   className: string,
   type: string,
+  text: string,
+  image: string,
 };
 Button.defaultProps = {
   type: 'button',

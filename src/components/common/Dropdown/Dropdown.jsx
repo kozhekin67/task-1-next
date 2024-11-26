@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import cx from 'classnames';
 import { string } from 'prop-types';
 import { useFormContext } from 'react-hook-form';
@@ -21,27 +21,30 @@ const Dropdown = ({ className, name }) => {
     }
   });
 
-  const toggleDropdown = () => setIsOpen(!isOpen);
-  const selectingAnItem = (value, label) => {
-    if (value === 'reset') {
-      setSelectedValue('');
-      setValue(name, '');
-      setIsOpen(() => setIsOpen(false));
-    } else {
-      setSelectedValue(label);
-      setValue(name, label);
-      setIsOpen(() => setIsOpen(false));
-    }
-    setIsOpen(!false);
-  };
+  const toggleDropdown = useCallback(() => {
+    setIsOpen(!isOpen);
+  }, [isOpen]);
+
+  const selectingAnItem = useCallback(
+    (value, label) => {
+      if (value === 'reset') {
+        setSelectedValue('');
+        setValue(name, '');
+      } else {
+        setSelectedValue(label);
+        setValue(name, label);
+      }
+      toggleDropdown();
+    },
+    [name, setValue, toggleDropdown]
+  );
 
   return (
     <div className={cx(s.dropdown, className)}>
       <div
-        className={cx(s.dropdown__button)}
+        className={cx(s.dropdown__button, { [s.selected]: selectedValue })}
         id="direction"
         onClick={toggleDropdown}
-        style={{ color: selectedValue ? 'black' : '#a6a6a6' }}
       >
         {selectedValue || placeholder}
       </div>

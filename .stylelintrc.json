@@ -1,17 +1,12 @@
 {
-  "extends": [
-    "stylelint-config-standard-scss"
-  ],
+  "extends": ["stylelint-config-standard-scss"],
   "rules": {
     "string-quotes": "single",
     "at-rule-no-unknown": null,
     "selector-pseudo-class-no-unknown": [
       true,
       {
-        "ignorePseudoClasses": [
-          "global",
-          "local"
-        ]
+        "ignorePseudoClasses": ["global", "local"]
       }
     ]
   }
