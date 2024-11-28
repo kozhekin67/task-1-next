@@ -1,14 +1,15 @@
 import React from 'react';
-import { string } from 'prop-types';
+import { string, func } from 'prop-types';
 import cx from 'classnames';
 
 import s from './Button.module.scss';
 
-const Button = ({ className, type, text, image }) => {
+const Button = ({ className, type, text, image, onClick }) => {
   return (
     <button
       className={cx(s.root, className)}
       type={type} // eslint-disable-line
+      onClick={onClick}
     >
       {text}
       {image}
@@ -21,6 +22,7 @@ Button.propTypes = {
   type: string,
   text: string,
   image: string,
+  onClick: func,
 };
 Button.defaultProps = {
   type: 'button',
