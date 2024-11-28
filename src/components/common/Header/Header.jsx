@@ -20,7 +20,6 @@ const Header = ({ className }) => {
       setShow(false);
     }
   };
-  // eslint-disable-next-line no-lone-blocks
 
   useEffect(() => {
     window.addEventListener('scroll', showMenu);
@@ -34,7 +33,7 @@ const Header = ({ className }) => {
       id="/header"
       className={cx(s.block, className)}
     >
-      <nav className={cx(s.menu, show ? s.menu_scroll : '')}>
+      <nav className={cx(s.menu, { [s.menu_scroll]: show })}>
         <div className={s.yourTur}>
           <Link
             href="#header"
@@ -42,13 +41,12 @@ const Header = ({ className }) => {
             onClick={() => smoothScrolling(`/header`)}
           >
             <YourTur
-              className={s.yourTur__img}
+              className={cx(s.yourTur__img, { [s.yourTur__img_scrool]: show })}
               alt="your-tur__img"
               xmlns="http://www.w3.org/2000/svg"
               width="182"
               height="32"
               viewBox="0 0 182 32"
-              style={{ fill: show ? '#1b1f2b' : '' }}
             />
           </Link>
         </div>
@@ -57,10 +55,9 @@ const Header = ({ className }) => {
             {navigationPoints.map(({ text, id }) => (
               <li>
                 <Link
-                  className={cx(
-                    s.siteSections__link,
-                    show ? s.siteSections__link_scroll : ''
-                  )}
+                  className={cx(s.siteSections__link, {
+                    [s.siteSections__link_scroll]: show,
+                  })}
                   href={`#${id}`}
                   onClick={() => smoothScrolling(`/${id}`)}
                 >
@@ -73,9 +70,10 @@ const Header = ({ className }) => {
         <div className={cx(s.block__phoneNumber, s.phoneNumber)}>
           <p>
             <Link
-              className={cx(s.phoneNumber__referenceNumber)}
+              className={cx(s.phoneNumber__referenceNumber, {
+                [s.phoneNumber__referenceNumber_scrool]: show,
+              })}
               href="tel:+79999999999"
-              style={{ color: show ? '#1b1f2b' : '' }}
             >
               +7 999 999 99 99
             </Link>
