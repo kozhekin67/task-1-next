@@ -6,6 +6,10 @@ import { useForm, FormProvider } from 'react-hook-form';
 
 import fillingFields from 'src/stubs/fillingFields';
 
+import Input from 'components/Input/Input';
+import Radio from 'components/Radio/Radio';
+import Checkbox from 'components/Checkbox/Checkbox';
+import Textarea from 'components/Textarea/Textarea';
 import Dropdown from 'components/Dropdown/Dropdown';
 import Button from 'components/Button';
 
@@ -14,6 +18,7 @@ import s from './Form.module.scss';
 
 const Form = ({ className }) => {
   const methods = useForm();
+  const { reset, handleSubmit, register } = methods;
 
   const onSubmit = data => {
     // eslint-disable-next-line no-alert
@@ -21,110 +26,97 @@ const Form = ({ className }) => {
   };
 
   const onReset = () => {
-    methods.reset();
+    reset();
   };
 
   return (
     <FormProvider {...methods}>
       <form
-        onSubmit={methods.handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(onSubmit)}
         action="/search"
-        className={cx(s.questionnaire__field, className)}
+        className={cx(s.root, className)}
       >
         <label
           htmlFor="name"
-          className={cx(s.dataField)}
+          className={s.dataField}
         >
           Имя
-          <input
+          <Input
             id="name"
-            className={cx(s.dataField__entry)}
+            className={s.entry}
             type="text"
             placeholder="Введите ваше имя"
-            {...methods.register('name', {
-              required: true,
-            })}
+            register={register}
           />
         </label>
         <label
-          className={cx(s.dataField, className)}
+          className={s.dataField}
           htmlFor="directions"
         >
           Направление
           <Dropdown
-            className={cx(s.dropdown, className)}
-            {...methods.register('direction', {
+            className={s.dropdown}
+            {...register('direction', {
               required: true,
             })}
           />
         </label>
         {fillingFields.map(({ htmlFor, id, text, type, placeholder }) => (
-          <>
-            <label
-              htmlFor={htmlFor}
-              className={cx(s.dataField)}
-            >
-              {text}
-              <input
-                id={id}
-                className={cx(s.dataField__entry)}
-                type={type}
-                placeholder={placeholder}
-                {...methods.register(htmlFor, {
-                  required: true,
-                })}
-              />
-            </label>
-            {/* // <div style={{ height: 70 }}>{errors?.firstName && <p>error!</p>}</div> */}
-          </>
+          <label
+            htmlFor={htmlFor}
+            className={s.dataField}
+            key={id}
+          >
+            {text}
+            <Input
+              id={id}
+              className={s.entry}
+              type={type}
+              placeholder={placeholder}
+              register={register}
+            />
+          </label>
         ))}
-        <div className={cx(s.comment)}>
+        <div className={s.comment}>
           <label htmlFor="rating">Комментарий</label>
-          <textarea
-            className={cx(s.comment__field)}
+          <Textarea
+            className={s.comment__field}
             id="rating"
-            name="rating"
             rows="5"
-            {...methods.register('rating', {
-              required: true,
-            })}
+            register={register}
           />
         </div>
-        <div className={cx(s.radioGroup)}>
+        <div className={s.radioGroup}>
           <p>Вам есть 18 лет?</p>
-          <div className={cx(s.radioGroup__buttons)}>
-            <div className={cx(s.radioGroup__block)}>
-              <input
-                className={cx(s.radioGroup__customButton)}
+          <div className={s.radioGroup__buttons}>
+            <div className={s.radioGroup__block}>
+              <Radio
+                className={s.radioGroup__customButton}
                 type="radio"
-                id="button-yes"
-                name="radiobutton"
+                id="yes"
                 value="yes"
-                {...methods.register('adults', {
-                  required: true,
-                })}
+                register={register}
+                name="adults"
               />
               <label
                 className={cx(s.radioGroup__button, s.radioGroup__button_yes)}
-                htmlFor="button-yes"
+                htmlFor="yes"
               >
                 Да
               </label>
             </div>
-            <div className={cx(s.radioGroup__block)}>
-              <input
-                className={cx(s.radioGroup__customButton)}
+            <div className={s.radioGroup__block}>
+              <Radio
+                className={s.radioGroup__customButton}
                 type="radio"
-                id="button-no"
-                name="radiobutton"
+                id="no"
                 value="no"
-                {...methods.register('adults', {
-                  required: true,
-                })}
+                register={register}
+                name="adults"
               />
               <label
                 className={cx(s.radioGroup__button, s.radioGroup__button_no)}
-                htmlFor="button-no"
+                htmlFor="no"
               >
                 Нет
               </label>
@@ -132,24 +124,20 @@ const Form = ({ className }) => {
           </div>
         </div>
 
-        <div className={cx(s.agreements)}>
-          <input
-            className={cx(s.agreements__customButton)}
-            type="checkbox"
+        <div className={s.agreements}>
+          <Checkbox
+            className={s.agreements__customButton}
             id="checkbox"
-            name="checkbox"
-            {...methods.register('checkbox', {
-              required: true,
-            })}
+            register={register}
           />
           <label
-            className={cx(s.agreements__button)}
+            className={s.agreements__button}
             htmlFor="checkbox"
           >
             <p>
               Нажимая кнопку, я принимаю условия
               <Link
-                className={cx(s.agreements__contractReference)}
+                className={s.agreements__contractReference}
                 href="#0"
               >
                 Лицензионного договора
@@ -157,13 +145,13 @@ const Form = ({ className }) => {
             </p>
           </label>
         </div>
-        <div className={cx(s.questionnaireButtons)}>
-          <div className={cx(s.questionnaireButtons__searchBlock)}>
+        <div className={s.processing}>
+          <div className={s.processing__searchBlock}>
             <label htmlFor="button-search">
               <Button
                 className={cx(
-                  s.questionnaireButtons__button,
-                  s.questionnaireButtons__button_search
+                  s.processing__button,
+                  s.processing__button_search
                 )}
                 type="submit"
                 id="button-search"
@@ -171,13 +159,10 @@ const Form = ({ className }) => {
               />
             </label>
           </div>
-          <div className={cx(s.questionnaireButtons__resetBlock)}>
+          <div className={s.processing__resetBlock}>
             <label htmlFor="button-reset">
               <Button
-                className={cx(
-                  s.questionnaireButtons__button,
-                  s.questionnaireButtons__button_reset
-                )}
+                className={cx(s.processing__button, s.processing__button_reset)}
                 type="button"
                 id="button-reset"
                 text="Cбросить"

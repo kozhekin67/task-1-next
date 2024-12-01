@@ -10,7 +10,7 @@ const Hero = ({ className }) => {
   return (
     <div className={cx(s.block, className)}>
       <div className={cx(s.block__title, s.title)}>
-        <h1 className={cx(s.title__text)}>Идеальные путешествия существуют</h1>
+        <h1 className={s.title__text}>Идеальные путешествия существуют</h1>
       </div>
       <div className={cx(s.block__introduction, s.introduction)}>
         <p>
@@ -19,7 +19,7 @@ const Hero = ({ className }) => {
         </p>
       </div>
       <Button
-        className={cx(s.searchButton)}
+        className={s.searchButton}
         text="Найти тур"
       />
     </div>
@@ -29,7 +29,5 @@ const Hero = ({ className }) => {
 Hero.propTypes = {
   className: string,
 };
-
-Hero.defaultProps = {};
 
 export default React.memo(Hero);

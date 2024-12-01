@@ -23,43 +23,44 @@ const arrow = (
 const TravelStories = ({ className }) => {
   return (
     <section
-      className={cx(s.sectionBlock, className)}
+      className={cx(s.root, className)}
       id="/travel-stories"
     >
-      <div className={cx(s.sectionName)}>
-        <h2 className={cx(s.sectionName__title)}>Истории путешествий</h2>
-        <p className={cx(s.sectionName__description)}>
+      <div className={s.sectionName}>
+        <h2 className={s.sectionName__title}>Истории путешествий</h2>
+        <p className={s.sectionName__description}>
           Идейные соображения высшего порядка,
           <br />а также рамки и место обучения кадров
         </p>
       </div>
-      <div className={cx(s.block)}>
-        {travelStoris.map(({ image, alt, advantages, socialNetwork }) => (
+      <div className={s.blocks}>
+        {travelStoris.map(({ image, id, advantages, socialNetwork }) => (
           // eslint-disable-next-line react/jsx-key
-          <div className={cx(s.blockHistory)}>
+          <div
+            className={s.block}
+            key={id}
+          >
             <Image
-              className={cx(s.blockHistory__foto)}
+              className={s.foto}
               src={image}
-              alt={alt}
+              alt={id}
               width={1000}
               height={1000}
             />
-            <div className={cx(s.blockHistory__conntent)}>
-              <div className={cx(s.blockHistory__name)}>
-                <h3 className={cx(s.blockHistory__subtitleSection)}>
-                  Автостопом в Стамбул
-                </h3>
-                <p className={cx(s.blockHistory__description)}>
+            <div className={s.conntent}>
+              <div className={s.name}>
+                <h3 className={s.subtitleSection}>Автостопом в Стамбул</h3>
+                <p className={s.description}>
                   Идейные соображения высшего порядка, а также рамки и место
                   обучения кадров обеспечивает широкому кругу (специалистов)
                   участие в формировании новых предложений:
                 </p>
                 {advantages}
               </div>
-              <div className={cx(s.blockHistory__bottom)}>
-                <div className={cx(s.blockHistory__detail)}>
+              <div className={s.bottom}>
+                <div className={s.detail}>
                   <Link
-                    className={cx(s.detailedLink)}
+                    className={s.detailedLink}
                     href="#0"
                   >
                     Подробнее {arrow}
@@ -78,7 +79,5 @@ const TravelStories = ({ className }) => {
 TravelStories.propTypes = {
   className: string,
 };
-
-TravelStories.defaultProps = {};
 
 export default React.memo(TravelStories);

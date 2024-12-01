@@ -58,14 +58,18 @@
       width: 133px;
     }
   }
+
+  &__img_scrool {
+    fill: #1b1f2b;
+  }
 }
 
-.siteSections {
+.sections {
   @include tablet {
     display: none;
   }
 
-  &__listSiteSections {
+  &__list {
     display: flex;
     justify-content: space-between;
     width: 468px;
@@ -109,9 +113,11 @@
   }
 }
 
-.phoneNumber {
-  &__referenceNumber {
-    position: relative;
-    color: #fff;
-  }
+.number {
+  position: relative;
+  color: #fff;
+}
+
+.number_scrool {
+  color: #1b1f2b;
 }

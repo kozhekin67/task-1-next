@@ -1,24 +1,23 @@
-import cx from 'classnames';
 import Link from 'next/link';
 
 import s from 'src/components/pages/Home/TravelStories/TravelStories.module.scss';
 
 const travelStoris = [
   {
-    alt: 'travel-history-1',
+    id: 'travel-history-1',
     image: '/images/travelStories/travel-history-1.png',
     advantages: (
-      <ul className={cx(s.blockHistory__advantages)}>
-        <li className={cx(s.blockHistory__advantage)}>вкусная еда</li>
-        <li className={cx(s.blockHistory__advantage)}>дешевый транспорт</li>
-        <li className={cx(s.blockHistory__advantage)}>красивый город.</li>
+      <ul className={s.advantages}>
+        <li className={s.advantage}>вкусная еда</li>
+        <li className={s.advantage}>дешевый транспорт</li>
+        <li className={s.advantage}>красивый город.</li>
       </ul>
     ),
     socialNetwork: (
-      <ul className={cx(s.blockHistory__linksSocialNetworks)}>
+      <ul className={s.socialNetwork}>
         <li>
           <Link
-            className={cx(s.blockHistory__linksSocialNetworksLink)}
+            className={s.linkSocialNetwork}
             href="#0"
           >
             instagram
@@ -26,7 +25,7 @@ const travelStoris = [
         </li>
         <li>
           <Link
-            className={cx(s.blockHistory__linksSocialNetworksLink)}
+            className={s.linkSocialNetwork}
             href="#0"
           >
             facebook
@@ -34,7 +33,7 @@ const travelStoris = [
         </li>
         <li>
           <Link
-            className={cx(s.blockHistory__linksSocialNetworksLink)}
+            className={s.linkSocialNetwork}
             href="#0"
           >
             YouTube
@@ -44,13 +43,13 @@ const travelStoris = [
     ),
   },
   {
-    alt: 'travel-history-2',
+    id: 'travel-history-2',
     image: '/images/travelStories/travel-history-2.png',
     socialNetwork: (
-      <ul className={cx(s.blockHistory__linksSocialNetworks)}>
+      <ul className={s.socialNetwork}>
         <li>
           <Link
-            className={cx(s.blockHistory__linksSocialNetworksLink)}
+            className={s.linkSocialNetwork}
             href="#0"
           >
             instagram
@@ -58,7 +57,7 @@ const travelStoris = [
         </li>
         <li>
           <Link
-            className={cx(s.blockHistory__linksSocialNetworksLink)}
+            className={s.linkSocialNetwork}
             href="#0"
           >
             Вконтакте
@@ -69,13 +68,13 @@ const travelStoris = [
   },
 
   {
-    alt: 'travel-history-3',
+    id: 'travel-history-3',
     image: '/images/travelStories/travel-history-3.png',
     socialNetwork: (
-      <ul className={cx(s.blockHistory__linksSocialNetworks)}>
+      <ul className={s.socialNetwork}>
         <li>
           <Link
-            className={cx(s.blockHistory__linksSocialNetworksLink)}
+            className={s.linkSocialNetwork}
             href="#0"
           >
             instagram
@@ -83,7 +82,7 @@ const travelStoris = [
         </li>
         <li>
           <Link
-            className={cx(s.blockHistory__linksSocialNetworksLink)}
+            className={s.linkSocialNetwork}
             href="#0"
           >
             facebook
@@ -91,7 +90,7 @@ const travelStoris = [
         </li>
         <li>
           <Link
-            className={cx(s.blockHistory__linksSocialNetworksLink)}
+            className={s.linkSocialNetwork}
             href="#0"
           >
             Вконтакте

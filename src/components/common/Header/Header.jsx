@@ -20,7 +20,6 @@ const Header = ({ className }) => {
       setShow(false);
     }
   };
-  // eslint-disable-next-line no-lone-blocks
 
   useEffect(() => {
     window.addEventListener('scroll', showMenu);
@@ -32,9 +31,9 @@ const Header = ({ className }) => {
   return (
     <header
       id="/header"
-      className={cx(s.block, className)}
+      className={cx(s.root, className)}
     >
-      <nav className={cx(s.menu, show ? s.menu_scroll : '')}>
+      <nav className={cx(s.menu, { [s.menu_scroll]: show })}>
         <div className={s.yourTur}>
           <Link
             href="#header"
@@ -42,25 +41,23 @@ const Header = ({ className }) => {
             onClick={() => smoothScrolling(`/header`)}
           >
             <YourTur
-              className={s.yourTur__img}
+              className={cx(s.yourTur__img, { [s.yourTur__img_scrool]: show })}
               alt="your-tur__img"
               xmlns="http://www.w3.org/2000/svg"
               width="182"
               height="32"
               viewBox="0 0 182 32"
-              style={{ fill: show ? '#1b1f2b' : '' }}
             />
           </Link>
         </div>
-        <div className={cx(s.block__siteSections, s.siteSections)}>
-          <ul className={cx(s.siteSections__listSiteSections)}>
+        <div className={s.sections}>
+          <ul className={s.sections__list}>
             {navigationPoints.map(({ text, id }) => (
-              <li>
+              <li key={id}>
                 <Link
-                  className={cx(
-                    s.siteSections__link,
-                    show ? s.siteSections__link_scroll : ''
-                  )}
+                  className={cx(s.sections__link, {
+                    [s.sections__link_scroll]: show,
+                  })}
                   href={`#${id}`}
                   onClick={() => smoothScrolling(`/${id}`)}
                 >
@@ -70,12 +67,13 @@ const Header = ({ className }) => {
             ))}
           </ul>
         </div>
-        <div className={cx(s.block__phoneNumber, s.phoneNumber)}>
+        <div className={s.phone}>
           <p>
             <Link
-              className={cx(s.phoneNumber__referenceNumber)}
+              className={cx(s.number, {
+                [s.number_scrool]: show,
+              })}
               href="tel:+79999999999"
-              style={{ color: show ? '#1b1f2b' : '' }}
             >
               +7 999 999 99 99
             </Link>
@@ -89,7 +87,5 @@ const Header = ({ className }) => {
 Header.propTypes = {
   className: string,
 };
-
-Header.defaultProps = {};
 
 export default React.memo(Header);
