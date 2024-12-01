@@ -1,4 +1,4 @@
-.sectionBlock {
+.root {
   @include sectionBlock;
 }
 
@@ -30,83 +30,82 @@
   @include mobile {
     grid-template-rows: repeat(3, 110px);
   }
+}
+.row_first,
+.row_third {
+  grid-column: auto / span 5;
 
-  &__row_first,
-  &__row_third {
-    grid-column: auto / span 5;
-
-    @include dekstop {
-      grid-column: auto / span 4;
-    }
-
-    @include tablet {
-      grid-column: auto / span 3;
-    }
-  }
-
-  &__row_second {
+  @include dekstop {
     grid-column: auto / span 4;
-
-    @include dekstop {
-      grid-column: auto / span 3;
-    }
-
-    @include tablet {
-      grid-column: auto / span 2;
-    }
   }
 
-  &__row_first {
-    @include mobile {
-      width: 97.5%;
-    }
+  @include tablet {
+    grid-column: auto / span 3;
+  }
+}
+
+.row_second {
+  grid-column: auto / span 4;
+
+  @include dekstop {
+    grid-column: auto / span 3;
   }
 
-  &__row:nth-child(2),
-  &__row:nth-child(7),
-  &__row:nth-child(13) {
-    @include dekstop {
-      display: none;
-    }
+  @include tablet {
+    grid-column: auto / span 2;
+  }
+}
 
-    @include tablet {
-      display: none;
-    }
+.row_first {
+  @include mobile {
+    width: 97.5%;
+  }
+}
+
+.row:nth-child(2),
+.row:nth-child(7),
+.row:nth-child(13) {
+  @include dekstop {
+    display: none;
   }
 
-  &__row:nth-child(3),
-  &__row:nth-child(6),
-  &__row:nth-child(12) {
-    @include tablet {
-      display: none;
-    }
+  @include tablet {
+    display: none;
+  }
+}
+
+.row:nth-child(3),
+.row:nth-child(6),
+.row:nth-child(12) {
+  @include tablet {
+    display: none;
+  }
+}
+
+.row:nth-child(4) {
+  @include mobile {
+    justify-self: end;
+  }
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: 50px;
+
+  @include tablet {
+    border-radius: 20px;
+  }
+}
+
+.row_first:not(:nth-child(3)) .photo {
+  @include dekstop {
+    object-fit: fill;
   }
 
-  &__row:nth-child(4) {
-    @include mobile {
-      justify-self: end;
-    }
-  }
-
-  &__photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 50% 50%;
-    border-radius: 50px;
-
-    @include tablet {
-      border-radius: 20px;
-    }
-  }
-
-  &__row_first:not(:nth-child(3)) &__photo {
-    @include dekstop {
-      object-fit: fill;
-    }
-
-    @include tablet {
-      object-fit: fill;
-    }
+  @include tablet {
+    object-fit: fill;
   }
 }

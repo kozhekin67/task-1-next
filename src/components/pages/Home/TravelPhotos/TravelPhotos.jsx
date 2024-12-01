@@ -11,48 +11,57 @@ import s from './TravelPhotos.module.scss';
 
 const TravelPhotos = ({ className }) => {
   return (
-    <section className={cx(s.sectionBlock, className)}>
-      <div className={cx(s.sectionName)}>
-        <h2 className={cx(s.sectionName__title)}>Фотографии путешествий</h2>
-        <p className={cx(s.sectionName__description)}>
+    <section className={cx(s.root, className)}>
+      <div className={s.sectionName}>
+        <h2 className={s.sectionName__title}>Фотографии путешествий</h2>
+        <p className={s.sectionName__description}>
           Идейные соображения высшего порядка,
           <br />а также рамки и место обучения кадров
         </p>
       </div>
-      <div className={cx(s.container)}>
-        {travelPhotosRowFirst.map(({ image, alt }) => (
+      <div className={s.container}>
+        {travelPhotosRowFirst.map(({ image, id }) => (
           // eslint-disable-next-line react/jsx-key
-          <div className={cx(s.container__row, s.container__row_first)}>
+          <div
+            className={cx(s.row, s.row_first)}
+            key={id}
+          >
             <Image
               src={image}
-              className={cx(s.container__photo)}
+              className={s.photo}
               width={1000}
               height={1000}
-              alt={alt}
+              alt={id}
             />
           </div>
         ))}
-        {travelPhotosRowSecond.map(({ image, alt }) => (
+        {travelPhotosRowSecond.map(({ image, id }) => (
           // eslint-disable-next-line react/jsx-key
-          <div className={cx(s.container__row, s.container__row_second)}>
+          <div
+            className={cx(s.row, s.row_second)}
+            key={id}
+          >
             <Image
               src={image}
-              className={cx(s.container__photo)}
+              className={s.photo}
               width={1000}
               height={1000}
-              alt={alt}
+              alt={id}
             />
           </div>
         ))}
-        {travelPhotosRowThird.map(({ image, alt }) => (
+        {travelPhotosRowThird.map(({ image, id }) => (
           // eslint-disable-next-line react/jsx-key
-          <div className={cx(s.container__row, s.container__row_third)}>
+          <div
+            className={cx(s.row, s.row_third)}
+            key={id}
+          >
             <Image
               src={image}
-              className={cx(s.container__photo)}
+              className={s.photo}
               width={1000}
               height={1000}
-              alt={alt}
+              alt={id}
             />
           </div>
         ))}
@@ -64,7 +73,5 @@ const TravelPhotos = ({ className }) => {
 TravelPhotos.propTypes = {
   className: string,
 };
-
-TravelPhotos.defaultProps = {};
 
 export default React.memo(TravelPhotos);

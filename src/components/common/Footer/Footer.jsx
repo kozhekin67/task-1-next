@@ -9,16 +9,19 @@ import s from './Footer.module.scss';
 
 const Footer = ({ className }) => {
   return (
-    <footer className={cx(s.container, className)}>
-      <div className={cx(s.bottom)}>
-        <p className={cx(s.bottom__description)}>Наши социальные сети</p>
-        <ul className={cx(s.bottom__listSocialNetworks)}>
+    <footer className={cx(s.root, className)}>
+      <div className={s.block}>
+        <p className={s.description}>Наши социальные сети</p>
+        <ul className={s.listSocialNetworks}>
           {socialNetwork.map(({ icon, text }) => (
             // eslint-disable-next-line react/jsx-key
-            <li className={cx(s.bottom__socialNetworkItem)}>
+            <li
+              className={s.socialNetworkItem}
+              key={text}
+            >
               {icon}
               <Link
-                className={cx(s.bottom__socialNetworkLink)}
+                className={s.socialNetworkLink}
                 href="#0"
               >
                 {text}
@@ -34,7 +37,5 @@ const Footer = ({ className }) => {
 Footer.propTypes = {
   className: string,
 };
-
-Footer.defaultProps = {};
 
 export default React.memo(Footer);

@@ -28,15 +28,18 @@ const Tours = ({ className }) => {
       className={cx(s.sectionBlock, className)}
       id="/choosing-tour"
     >
-      <div className={cx(s.sectionName)}>
-        <h2 className={cx(s.sectionName__title)}>Выбери свой тур</h2>
-        <div className={cx(s.block)}>
-          <ul className={cx(s.block__list)}>
-            {tourOptions.map(({ text }) => (
+      <div className={s.sectionName}>
+        <h2 className={s.sectionName__title}>Выбери свой тур</h2>
+        <div className={s.block}>
+          <ul className={s.list}>
+            {tourOptions.map(({ text, name }) => (
               // eslint-disable-next-line react/jsx-key
-              <li className={cx(s.block__point)}>
+              <li
+                className={s.point}
+                key={name}
+              >
                 <Button
-                  className={cx(s.block__selectionButton)}
+                  className={s.selectionButton}
                   value={text}
                   text={text}
                   type="submit"
@@ -46,27 +49,28 @@ const Tours = ({ className }) => {
           </ul>
         </div>
       </div>
-      <div className={cx(s.cards)}>
-        {cardTours.map(({ alt, image }) => (
+      <div className={s.cards}>
+        {cardTours.map(({ id, image }) => (
           // eslint-disable-next-line react/jsx-key
-          <div className={cx(s.card)}>
+          <div
+            className={s.card}
+            key={id}
+          >
             <Image
               src={image}
-              className={cx(s.card__photo)}
+              className={s.photo}
               width={1000}
               height={1000}
-              alt={alt}
+              alt={id}
             />
-            <div className={cx(s.card__conntent)}>
-              <div className={cx(s.card__name)}>
-                <h3 className={cx(s.card__subtitleSection)}>
-                  Путешествие в горы
-                </h3>
-                <p className={cx(s.card__cost)}>от 80 000 руб</p>
+            <div className={s.conntent}>
+              <div className={s.name}>
+                <h3 className={s.subtitleSection}>Путешествие в горы</h3>
+                <p className={s.cost}>от 80 000 руб</p>
               </div>
-              <div className={cx(s.card__detail)}>
+              <div className={s.detail}>
                 <Link
-                  className={cx(s.detailedLink)}
+                  className={s.detailedLink}
                   href="#0"
                 >
                   Подробнее {arrow}
@@ -83,7 +87,5 @@ const Tours = ({ className }) => {
 Tours.propTypes = {
   className: string,
 };
-
-Tours.defaultProps = {};
 
 export default React.memo(Tours);

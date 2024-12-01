@@ -1,10 +1,9 @@
-import cx from 'classnames';
 import s from 'src/components/pages/Home/Rviews/Reviews.module.scss';
 
 const reviews = [
   {
     text: (
-      <p className={cx(s.reviewBlock__text)}>
+      <p className={s.text}>
         Идейные соображения высшего порядка, а также рамки и место обучения
         кадров обеспечивает широкому кругу (специалистов) участие в формировании
         новых предложений. Идейные соображения высшего порядка, а также начало
@@ -15,11 +14,11 @@ const reviews = [
     userName: 'Мария',
     tourName: 'Тур: Вдали от дома',
     userPhoto: '/images/users/user-photo-1.jpeg',
-    alt: 'card-tour-photo-1',
+    id: 'card-tour-photo-1',
   },
   {
     text: (
-      <p className={cx(s.reviewBlock__text)}>
+      <p className={s.text}>
         Равным образом постоянный количественный рост и сфера нашей активности
         играет важную роль в формировании системы обучения кадров, соответствует
         насущным потребностям.
@@ -35,7 +34,7 @@ const reviews = [
     userName: 'Павел',
     tourName: 'Тур: Путешествие в горы',
     userPhoto: '/images/users/user-photo-2.jpeg',
-    alt: 'card-tour-photo-2',
+    id: 'card-tour-photo-2',
   },
 ];
 

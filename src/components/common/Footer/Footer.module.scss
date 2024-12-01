@@ -1,8 +1,8 @@
-.container {
+.root {
   background: #f4f0e9;
 }
 
-.bottom {
+.block {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,81 +20,80 @@
     width: 100%;
     padding-top: 21px;
   }
+}
+.description {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 142%;
+  color: #a6a6a6;
 
-  &__description {
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 142%;
-    color: #a6a6a6;
+  @include tablet {
+    font-size: 16px;
+  }
+}
 
-    @include tablet {
-      font-size: 16px;
+.listSocialNetworks {
+  display: flex;
+  gap: 25px;
+
+  @include tablet {
+    justify-content: center;
+    margin-top: 10px;
+    gap: 14px;
+    width: 95%;
+  }
+}
+
+.socialNetworkItem {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 142%;
+  list-style: none;
+
+  @include tablet {
+    gap: 2px;
+    margin: 0;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.socialNetworkIcon {
+  width: 26px;
+  height: 26px;
+}
+
+.socialNetworkLink {
+  position: relative;
+  display: inline-block;
+  color: #1b1f2b;
+
+  @include event-selectors {
+    &::before {
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      content: '';
+      border-bottom: 1px solid #000;
+      transition: transform 300ms ease-in;
+      transform: scale(0);
+    }
+
+    &:hover::before {
+      transform: scale(1);
     }
   }
 
-  &__listSocialNetworks {
+  @include tablet {
     display: flex;
-    gap: 25px;
-
-    @include tablet {
-      justify-content: center;
-      margin-top: 10px;
-      gap: 14px;
-      width: 95%;
-    }
-  }
-
-  &__socialNetworkItem {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    font-size: 20px;
-    font-weight: 400;
+    justify-content: center;
+    font-size: 16px;
     line-height: 142%;
-    list-style: none;
-
-    @include tablet {
-      gap: 2px;
-      margin: 0;
-      &:first-child {
-        margin-left: 0;
-      }
-    }
-  }
-
-  &__socialNetworkIcon {
-    width: 26px;
-    height: 26px;
-  }
-
-  &__socialNetworkLink {
-    position: relative;
-    display: inline-block;
-    color: #1b1f2b;
-
-    @include event-selectors {
-      &::before {
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 100%;
-        content: '';
-        border-bottom: 1px solid #000;
-        transition: transform 300ms ease-in;
-        transform: scale(0);
-      }
-
-      &:hover::before {
-        transform: scale(1);
-      }
-    }
-
-    @include tablet {
-      display: flex;
-      justify-content: center;
-      font-size: 16px;
-      line-height: 142%;
-    }
   }
 }

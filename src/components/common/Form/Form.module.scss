@@ -1,29 +1,23 @@
 .root {
-  position: relative;
-}
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 1170px;
+  padding: 70px;
+  margin: 100px auto 0;
+  background: #fff;
+  border-radius: 50px;
 
-.questionnaire {
-  &__field {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 1170px;
-    padding: 70px;
-    margin: 100px auto 0;
-    background: #fff;
-    border-radius: 50px;
+  @include dekstop {
+    width: 89.65%;
+    padding: 60px;
+  }
 
-    @include dekstop {
-      width: 89.65%;
-      padding: 60px;
-    }
-
-    @include tablet {
-      width: 88.33%;
-      padding: 20px;
-      margin-top: 40px;
-      border-radius: 30px;
-    }
+  @include tablet {
+    width: 88.33%;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 30px;
   }
 }
 
@@ -43,50 +37,51 @@
     margin: 6px 0 30px;
     font-size: 16px;
   }
+}
 
-  &__entry {
-    width: 100%;
-    padding: 20px;
-    margin-top: 8px;
-    font-size: 20px;
+.entry {
+  width: 100%;
+  padding: 20px;
+  margin-top: 8px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 142%;
+  color: #1b1f2b;
+  background: #f9f7f4;
+  border: 1px solid #f4f0e9;
+  border-radius: 10px;
+  transition:
+    border 300ms ease-in,
+    background-color 300ms ease-in;
+
+  &::placeholder {
+    font-family: Roboto, Arial, sans-serif;
     font-style: normal;
-    font-weight: 400;
-    line-height: 142%;
-    color: #1b1f2b;
-    background: #f9f7f4;
-    border: 1px solid #f4f0e9;
-    border-radius: 10px;
-    transition:
-      border 300ms ease-in,
-      background-color 300ms ease-in;
+    color: #a6a6a6;
+  }
+
+  @include event-selectors {
+    &:hover {
+      background: #f4f0e9;
+      border: 1px solid #f4f0e9;
+      border-radius: 10px;
+    }
+
+    &:focus {
+      background: #f4f0e9;
+      border: 1px solid #a6a6a6;
+      border-radius: 10px;
+    }
+  }
+
+  @include tablet {
+    height: 43px;
+    padding: 10px;
+    font-size: 16px;
 
     &::placeholder {
-      font-family: Roboto, Arial, sans-serif;
-      font-style: normal;
-      color: #a6a6a6;
-    }
-
-    @include event-selectors {
-      &:hover {
-        background: #f4f0e9;
-        border: 1px solid #f4f0e9;
-        border-radius: 10px;
-      }
-
-      &:focus {
-        background: #f4f0e9;
-        border: 1px solid #a6a6a6;
-        border-radius: 10px;
-      }
-    }
-
-    @include tablet {
-      height: 43px;
-      padding: 10px;
-
-      &::placeholder {
-        font-size: 16px;
-      }
+      font-size: 16px;
     }
   }
 }
@@ -293,7 +288,7 @@
   }
 }
 
-.questionnaireButtons {
+.processing {
   display: flex;
   justify-content: space-between;
   width: 500px;

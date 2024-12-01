@@ -18,7 +18,7 @@ const Home = ({ className }) => {
     <div className={cx(s.root, className)}>
       <Header />
       <Hero />
-      <main className={cx(s.mainBlock, className)}>
+      <main className={s.mainBlock}>
         <Tours />
         <CreateTour />
         <Reviews />
@@ -34,7 +34,5 @@ const Home = ({ className }) => {
 Home.propTypes = {
   className: string,
 };
-
-Home.defaultProps = {};
 
 export default React.memo(Home);

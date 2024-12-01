@@ -10,36 +10,38 @@ import s from './Reviews.module.scss';
 const Reviews = ({ className }) => {
   return (
     <section
-      className={cx(s.sectionBlock, className)}
+      className={cx(s.root, className)}
       id="/reviews"
     >
-      <div className={cx(s.sectionName)}>
-        <h2 className={cx(s.sectionName__title)}>
+      <div className={s.sectionName}>
+        <h2 className={s.sectionName__title}>
           Отзывы наших <br />
           путешественников
         </h2>
-        <p className={cx(s.sectionName__description)}>
+        <p className={s.sectionName__description}>
           Идейные соображения высшего порядка,
           <br />а также рамки и место обучения кадров
         </p>
       </div>
-      <div className={cx(s.reviews__block)}>
-        {reviews.map(({ text, userName, tourName, userPhoto, alt }) => (
+      <div className={s.blocks}>
+        {reviews.map(({ text, userName, tourName, userPhoto, id }) => (
           // eslint-disable-next-line react/jsx-key
-          <div className={cx(s.reviewBlock)}>
+          <div
+            className={s.block}
+            key={id}
+          >
             {text}
-            {/* <p className={cx(s.reviewBlock__text)}>{text}</p> */}
-            <div className={cx(s.reviewBlock__userBlock)}>
-              <div className={cx(s.reviewBlock__userBlockName)}>
-                <h3 className={cx(s.subtitleSection)}>{userName}</h3>
-                <p className={cx(s.reviewBlock__tourName)}>{tourName}</p>
+            <div className={s.userBlock}>
+              <div className={s.userBlockName}>
+                <h3 className={s.subtitleSection}>{userName}</h3>
+                <p className={s.tourName}>{tourName}</p>
               </div>
               <Image
-                className={cx(s.reviewBlock__photo)}
+                className={s.photo}
                 width={75}
                 height={75}
                 src={userPhoto}
-                alt={alt}
+                alt={id}
               />
             </div>
           </div>
@@ -52,7 +54,5 @@ const Reviews = ({ className }) => {
 Reviews.propTypes = {
   className: string,
 };
-
-Reviews.defaultProps = {};
 
 export default React.memo(Reviews);

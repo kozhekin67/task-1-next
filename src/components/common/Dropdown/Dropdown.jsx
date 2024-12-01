@@ -40,24 +40,24 @@ const Dropdown = ({ className, name }) => {
   );
 
   return (
-    <div className={cx(s.dropdown, className)}>
+    <div className={cx(s.root, className)}>
       <div
-        className={cx(s.dropdown__button, { [s.selected]: selectedValue })}
+        className={cx(s.button, { [s.selected]: selectedValue })}
         id="direction"
         onClick={toggleDropdown}
       >
         {selectedValue || placeholder}
       </div>
-      <DropdownArrow className={cx(s.dropdown__arrow)} />
+      <DropdownArrow className={s.arrow} />
       {isOpen && (
         <ul
-          className={cx(s.dropdown__list)}
+          className={s.list}
           ref={dropdownRef}
         >
           {dropDownListOptions.map(({ value, label }) => (
             // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
             <li
-              className={cx(s.dropdown__listItem)}
+              className={s.listItem}
               key={label}
               onClick={() => selectingAnItem(value, label)}
             >
@@ -74,7 +74,5 @@ Dropdown.propTypes = {
   className: string,
   name: string.isRequired,
 };
-
-Dropdown.defaultProps = {};
 
 export default React.memo(Dropdown);

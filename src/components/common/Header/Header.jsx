@@ -31,7 +31,7 @@ const Header = ({ className }) => {
   return (
     <header
       id="/header"
-      className={cx(s.block, className)}
+      className={cx(s.root, className)}
     >
       <nav className={cx(s.menu, { [s.menu_scroll]: show })}>
         <div className={s.yourTur}>
@@ -50,13 +50,13 @@ const Header = ({ className }) => {
             />
           </Link>
         </div>
-        <div className={cx(s.block__siteSections, s.siteSections)}>
-          <ul className={cx(s.siteSections__listSiteSections)}>
+        <div className={s.sections}>
+          <ul className={s.sections__list}>
             {navigationPoints.map(({ text, id }) => (
-              <li>
+              <li key={id}>
                 <Link
-                  className={cx(s.siteSections__link, {
-                    [s.siteSections__link_scroll]: show,
+                  className={cx(s.sections__link, {
+                    [s.sections__link_scroll]: show,
                   })}
                   href={`#${id}`}
                   onClick={() => smoothScrolling(`/${id}`)}
@@ -67,11 +67,11 @@ const Header = ({ className }) => {
             ))}
           </ul>
         </div>
-        <div className={cx(s.block__phoneNumber, s.phoneNumber)}>
+        <div className={s.phone}>
           <p>
             <Link
-              className={cx(s.phoneNumber__referenceNumber, {
-                [s.phoneNumber__referenceNumber_scrool]: show,
+              className={cx(s.number, {
+                [s.number_scrool]: show,
               })}
               href="tel:+79999999999"
             >
@@ -87,7 +87,5 @@ const Header = ({ className }) => {
 Header.propTypes = {
   className: string,
 };
-
-Header.defaultProps = {};
 
 export default React.memo(Header);

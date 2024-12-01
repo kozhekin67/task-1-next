@@ -34,28 +34,28 @@ const Form = ({ className }) => {
       <form
         onSubmit={handleSubmit(onSubmit)}
         action="/search"
-        className={cx(s.questionnaire__field, className)}
+        className={cx(s.root, className)}
       >
         <label
           htmlFor="name"
-          className={cx(s.dataField)}
+          className={s.dataField}
         >
           Имя
           <Input
             id="name"
-            className={cx(s.dataField__entry)}
+            className={s.entry}
             type="text"
             placeholder="Введите ваше имя"
             register={register}
           />
         </label>
         <label
-          className={cx(s.dataField, className)}
+          className={s.dataField}
           htmlFor="directions"
         >
           Направление
           <Dropdown
-            className={cx(s.dropdown, className)}
+            className={s.dropdown}
             {...register('direction', {
               required: true,
             })}
@@ -64,34 +64,34 @@ const Form = ({ className }) => {
         {fillingFields.map(({ htmlFor, id, text, type, placeholder }) => (
           <label
             htmlFor={htmlFor}
-            className={cx(s.dataField)}
+            className={s.dataField}
             key={id}
           >
             {text}
             <Input
               id={id}
-              className={cx(s.dataField__entry)}
+              className={s.entry}
               type={type}
               placeholder={placeholder}
               register={register}
             />
           </label>
         ))}
-        <div className={cx(s.comment)}>
+        <div className={s.comment}>
           <label htmlFor="rating">Комментарий</label>
           <Textarea
-            className={cx(s.comment__field)}
+            className={s.comment__field}
             id="rating"
             rows="5"
             register={register}
           />
         </div>
-        <div className={cx(s.radioGroup)}>
+        <div className={s.radioGroup}>
           <p>Вам есть 18 лет?</p>
-          <div className={cx(s.radioGroup__buttons)}>
-            <div className={cx(s.radioGroup__block)}>
+          <div className={s.radioGroup__buttons}>
+            <div className={s.radioGroup__block}>
               <Radio
-                className={cx(s.radioGroup__customButton)}
+                className={s.radioGroup__customButton}
                 type="radio"
                 id="yes"
                 value="yes"
@@ -105,9 +105,9 @@ const Form = ({ className }) => {
                 Да
               </label>
             </div>
-            <div className={cx(s.radioGroup__block)}>
+            <div className={s.radioGroup__block}>
               <Radio
-                className={cx(s.radioGroup__customButton)}
+                className={s.radioGroup__customButton}
                 type="radio"
                 id="no"
                 value="no"
@@ -124,20 +124,20 @@ const Form = ({ className }) => {
           </div>
         </div>
 
-        <div className={cx(s.agreements)}>
+        <div className={s.agreements}>
           <Checkbox
-            className={cx(s.agreements__customButton)}
+            className={s.agreements__customButton}
             id="checkbox"
             register={register}
           />
           <label
-            className={cx(s.agreements__button)}
+            className={s.agreements__button}
             htmlFor="checkbox"
           >
             <p>
               Нажимая кнопку, я принимаю условия
               <Link
-                className={cx(s.agreements__contractReference)}
+                className={s.agreements__contractReference}
                 href="#0"
               >
                 Лицензионного договора
@@ -145,13 +145,13 @@ const Form = ({ className }) => {
             </p>
           </label>
         </div>
-        <div className={cx(s.questionnaireButtons)}>
-          <div className={cx(s.questionnaireButtons__searchBlock)}>
+        <div className={s.processing}>
+          <div className={s.processing__searchBlock}>
             <label htmlFor="button-search">
               <Button
                 className={cx(
-                  s.questionnaireButtons__button,
-                  s.questionnaireButtons__button_search
+                  s.processing__button,
+                  s.processing__button_search
                 )}
                 type="submit"
                 id="button-search"
@@ -159,13 +159,10 @@ const Form = ({ className }) => {
               />
             </label>
           </div>
-          <div className={cx(s.questionnaireButtons__resetBlock)}>
+          <div className={s.processing__resetBlock}>
             <label htmlFor="button-reset">
               <Button
-                className={cx(
-                  s.questionnaireButtons__button,
-                  s.questionnaireButtons__button_reset
-                )}
+                className={cx(s.processing__button, s.processing__button_reset)}
                 type="button"
                 id="button-reset"
                 text="Cбросить"
