@@ -6,6 +6,7 @@ import { string } from 'prop-types';
 
 import travelStoris from 'src/stubs/travelStoris';
 
+import Title from 'components/Title/Title';
 import Arrow from 'public/images/svg/Arrow.svg';
 
 import s from './TravelStories.module.scss';
@@ -26,13 +27,11 @@ const TravelStories = ({ className }) => {
       className={cx(s.root, className)}
       id="/travel-stories"
     >
-      <div className={s.sectionName}>
-        <h2 className={s.sectionName__title}>Истории путешествий</h2>
-        <p className={s.sectionName__description}>
-          Идейные соображения высшего порядка,
-          <br />а также рамки и место обучения кадров
-        </p>
-      </div>
+      <Title
+        title="Истории путешествий"
+        description="Идейные соображения высшего порядка, а также рамки и место обучения
+          кадров"
+      />
       <div className={s.blocks}>
         {travelStoris.map(({ image, id, advantages, socialNetwork }) => (
           // eslint-disable-next-line react/jsx-key

@@ -2,10 +2,6 @@
   @include sectionBlock;
 }
 
-.sectionName {
-  @include sectionName;
-}
-
 .container {
   display: grid;
   grid-template-rows: repeat(3, 300px);

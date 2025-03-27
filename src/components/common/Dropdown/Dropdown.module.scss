@@ -19,9 +19,9 @@
   font-style: normal;
   font-weight: 400;
   line-height: 142%;
-  color: #a6a6a6;
-  background: #f9f7f4;
-  border: 1px solid #f4f0e9;
+  color: $grey;
+  background: $very-light-beige;
+  border: 1px solid $light-grey;
   border-radius: 10px;
   transition:
     border 300ms ease-in,
@@ -29,14 +29,14 @@
 
   @include event-selectors {
     &:hover {
-      background: #f4f0e9;
-      border: 1px solid #f4f0e9;
+      background: $light-grey;
+      border: 1px solid $light-grey;
       border-radius: 10px;
     }
 
     &:active {
-      background: #f4f0e9;
-      border: 1px solid #a6a6a6;
+      background: $light-grey;
+      border: 1px solid $grey;
       border-radius: 10px;
     }
   }
@@ -49,7 +49,7 @@
 }
 
 .selected {
-  color: #1b1f2b;
+  color: $dark;
 }
 
 .arrow {
@@ -59,7 +59,7 @@
   width: 26px;
   height: 26px;
   pointer-events: none;
-  fill: #1b1f2b;
+  fill: $dark;
 
   @include tablet {
     top: 12px;
@@ -72,23 +72,23 @@
   z-index: 1;
   width: 100%;
   overflow: hidden;
-  color: #1b1f2b;
+  color: $dark;
   text-align: left;
   list-style-type: none;
-  background: #f9f7f4;
-  border: 1px solid #f4f0e9;
+  background: $very-light-beige;
+  border: 1px solid $light-grey;
   border-radius: 10px;
 }
 
 .listItem {
   padding: 20px;
   cursor: pointer;
-  border: 1px solid #f4f0e9;
-  border-bottom: 1px solid #f4f0e9;
+  border: 1px solid $light-grey;
+  border-bottom: 1px solid $light-grey;
 
   @include event-selectors {
     &:hover {
-      background: #f4f0e9;
+      background: $light-grey;
     }
   }
 
@@ -99,8 +99,8 @@
 
 .refund {
   padding: 20px;
-  color: #a6a6a6;
+  color: $grey;
   cursor: pointer;
-  border: 1px solid #f4f0e9;
-  border-bottom: 1px solid #f4f0e9;
+  border: 1px solid $light-grey;
+  border-bottom: 1px solid $light-grey;
 }

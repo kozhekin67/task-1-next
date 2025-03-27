@@ -13,7 +13,7 @@ const nextConfig = {
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
-    prependData: `@use "styles/mixins.scss" as *; @import "styles/functions.scss";`,
+    prependData: `@use "styles/mixins.scss" as *; @import "styles/functions.scss"; @import "styles/colors.scss"; @import "styles/widths.scss";`,
   },
 };
 

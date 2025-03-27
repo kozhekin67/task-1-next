@@ -5,6 +5,8 @@ import { string } from 'prop-types';
 
 import reviews from 'src/stubs/reviews';
 
+import Title from 'components/Title';
+
 import s from './Reviews.module.scss';
 
 const Reviews = ({ className }) => {
@@ -13,16 +15,11 @@ const Reviews = ({ className }) => {
       className={cx(s.root, className)}
       id="/reviews"
     >
-      <div className={s.sectionName}>
-        <h2 className={s.sectionName__title}>
-          Отзывы наших <br />
-          путешественников
-        </h2>
-        <p className={s.sectionName__description}>
-          Идейные соображения высшего порядка,
-          <br />а также рамки и место обучения кадров
-        </p>
-      </div>
+      <Title
+        title="Отзывы наших путешественников"
+        description="Идейные соображения высшего порядка, а также рамки и место обучения
+          кадров"
+      />
       <div className={s.blocks}>
         {reviews.map(({ text, userName, tourName, userPhoto, id }) => (
           // eslint-disable-next-line react/jsx-key

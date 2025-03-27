@@ -7,6 +7,7 @@ import { string } from 'prop-types';
 import tourOptions from 'src/stubs/tourOptions';
 import cardTours from 'src/stubs/cardTours';
 
+import Title from 'components/Title/Title';
 import Button from 'components/Button';
 import Arrow from 'public/images/svg/Arrow.svg';
 
@@ -28,26 +29,27 @@ const Tours = ({ className }) => {
       className={cx(s.sectionBlock, className)}
       id="/choosing-tour"
     >
-      <div className={s.sectionName}>
-        <h2 className={s.sectionName__title}>Выбери свой тур</h2>
-        <div className={s.block}>
-          <ul className={s.list}>
-            {tourOptions.map(({ text, name }) => (
-              // eslint-disable-next-line react/jsx-key
-              <li
-                className={s.point}
-                key={name}
-              >
-                <Button
-                  className={s.selectionButton}
-                  value={text}
-                  text={text}
-                  type="submit"
-                />
-              </li>
-            ))}
-          </ul>
-        </div>
+      <Title
+        className={s.titleBlock}
+        title="Выбери свой тур"
+      />
+      <div className={s.block}>
+        <ul className={s.list}>
+          {tourOptions.map(({ text, name }) => (
+            // eslint-disable-next-line react/jsx-key
+            <li
+              className={s.point}
+              key={name}
+            >
+              <Button
+                className={s.selectionButton}
+                value={text}
+                text={text}
+                type="submit"
+              />
+            </li>
+          ))}
+        </ul>
       </div>
       <div className={s.cards}>
         {cardTours.map(({ id, image }) => (

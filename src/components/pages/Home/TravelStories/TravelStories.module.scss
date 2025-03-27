@@ -1,9 +1,10 @@
 .root {
   @include sectionBlock;
-}
+  margin-bottom: 135px;
 
-.sectionName {
-  @include sectionName;
+  @include tablet {
+    margin-bottom: 75px;
+  }
 }
 
 .block {
@@ -11,7 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1170px;
+  width: $dekstop-width;
   height: 567px;
   margin: 100px auto 0;
   overflow: hidden;
@@ -42,7 +43,7 @@
     }
 
     &:hover .detailedLink {
-      background: #286562;
+      background: $green;
     }
 
     &:hover .foto {
@@ -51,15 +52,15 @@
   }
 
   @include dekstop {
-    width: 89.65%;
+    width: $tablet-width;
   }
 
   @include tablet {
     display: flex;
     justify-content: center;
-    width: 88.33%;
+    width: $mobile-width;
     height: 455px;
-    margin-top: 45px;
+    margin-top: 50px;
     border-radius: 20px;
 
     &:not(:first-child) {
@@ -115,7 +116,7 @@
   @include subtitle-style;
 
   font-style: normal;
-  color: #fff;
+  color: $white;
 
   @include tablet {
     width: 50%;
@@ -139,7 +140,7 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 145%;
-    color: #fff;
+    color: $white;
   }
 }
 
@@ -155,7 +156,7 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 145%;
-    color: #fff;
+    color: $white;
   }
 }
 
@@ -227,7 +228,7 @@
       left: 0;
       width: 100%;
       content: '';
-      border-bottom: 1px solid #fff;
+      border-bottom: 1px solid $white;
       transition:
         transform 300ms ease-in,
         border-bottom 300ms ease-in;
@@ -239,11 +240,11 @@
     }
 
     &:active {
-      color: #efa501;
+      color: $orange;
     }
 
     &:active::before {
-      border-color: #efa501;
+      border-color: $orange;
     }
   }
 }

@@ -1,52 +1,37 @@
-.menu {
+.root {
   position: absolute;
-  left: 50%;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   width: 100%;
   height: 88px;
-  padding: 0 19.58%;
-  margin: 0 auto;
-  font-size: 20px;
-  font-weight: 400;
-  color: #fff;
-  transform: translate(-50%);
-
-  @include dekstop {
-    padding: 0 5.6%;
-  }
-
-  @include tablet {
-    padding: 0 5.6%;
-    font-size: 16px;
-  }
 }
 
-.menu_scroll {
+.root_scroll {
   position: fixed;
   top: 0;
   z-index: 2;
-  align-items: center;
-  width: 100%;
-  padding-right: 19.58%;
-  padding-left: 19.58%;
   background: rgb(243 239 232 / 60%);
   backdrop-filter: blur(27px);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1168px;
+  height: 88px;
+  margin: auto;
+  font-size: 20px;
+  font-weight: 400;
+  color: $white;
 
   @include dekstop {
-    z-index: 2;
-    width: 100%;
-    padding-right: 5.6%;
-    padding-left: 5.6%;
+    width: 88.86%;
+    max-width: 910px;
   }
 
   @include tablet {
-    z-index: 2;
-    width: 100%;
-    padding-right: 5.6%;
-    padding-left: 5.6%;
+    width: 88.88%;
+    max-width: 320px;
+    font-size: 16px;
   }
 }
 
@@ -60,7 +45,7 @@
   }
 
   &__img_scrool {
-    fill: #1b1f2b;
+    fill: $dark;
   }
 }
 
@@ -81,7 +66,7 @@
 
   &__link {
     position: relative;
-    color: #fff;
+    color: $white;
 
     @include event-selectors {
       &::before {
@@ -90,7 +75,7 @@
         left: 0;
         width: 100%;
         content: '';
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid $white;
         transition: transform 300ms ease-in;
         transform: scale(0);
       }
@@ -102,12 +87,12 @@
   }
 
   &__link_scroll {
-    color: #000;
+    color: $black;
 
     @include event-selectors {
       &::before {
         content: '';
-        border-bottom: 1px solid #000;
+        border-bottom: 1px solid $black;
       }
     }
   }
@@ -115,9 +100,9 @@
 
 .number {
   position: relative;
-  color: #fff;
+  color: $white;
 }
 
 .number_scrool {
-  color: #1b1f2b;
+  color: $dark;
 }

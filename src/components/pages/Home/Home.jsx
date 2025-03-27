@@ -1,5 +1,6 @@
 import React from 'react';
 import { string } from 'prop-types';
+import Head from 'next/head';
 import cx from 'classnames';
 import Header from 'components/Header';
 import Footer from 'components/Footer/Footer';
@@ -15,19 +16,24 @@ import s from './Home.module.scss';
 
 const Home = ({ className }) => {
   return (
-    <div className={cx(s.root, className)}>
-      <Header />
-      <Hero />
-      <main className={s.mainBlock}>
-        <Tours />
-        <CreateTour />
-        <Reviews />
-        <TravelPhotos />
-        <TravelStories />
-        <Feedback />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <Head>
+        <title>YourTour</title>
+      </Head>
+      <div className={cx(s.root, className)}>
+        <Header />
+        <Hero />
+        <main className={s.mainBlock}>
+          <Tours />
+          <CreateTour />
+          <Reviews />
+          <TravelPhotos />
+          <TravelStories />
+          <Feedback />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 

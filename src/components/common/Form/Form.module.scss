@@ -2,21 +2,20 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 1170px;
+  width: $dekstop-width;
+  margin: 0 auto;
   padding: 70px;
-  margin: 100px auto 0;
-  background: #fff;
+  background: $white;
   border-radius: 50px;
 
   @include dekstop {
-    width: 89.65%;
+    width: $tablet-width;
     padding: 60px;
   }
 
   @include tablet {
-    width: 88.33%;
-    padding: 20px;
-    margin-top: 40px;
+    width: $mobile-width;
+    padding: 25px 20px;
     border-radius: 30px;
   }
 }
@@ -24,9 +23,9 @@
 .dataField {
   display: block;
   width: 500px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   font-size: 20px;
-  color: #1b1f2b;
+  color: $dark;
 
   @include dekstop {
     width: 48.75%;
@@ -34,22 +33,22 @@
 
   @include tablet {
     width: 100%;
-    margin: 6px 0 30px;
+    margin-bottom: 36px;
     font-size: 16px;
   }
 }
 
 .entry {
   width: 100%;
-  padding: 20px;
+  padding: 25px 20px;
   margin-top: 8px;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 142%;
-  color: #1b1f2b;
-  background: #f9f7f4;
-  border: 1px solid #f4f0e9;
+  color: $dark;
+  background: $very-light-beige;
+  border: 1px solid $light-grey;
   border-radius: 10px;
   transition:
     border 300ms ease-in,
@@ -58,19 +57,19 @@
   &::placeholder {
     font-family: Roboto, Arial, sans-serif;
     font-style: normal;
-    color: #a6a6a6;
+    color: $grey;
   }
 
   @include event-selectors {
     &:hover {
-      background: #f4f0e9;
-      border: 1px solid #f4f0e9;
+      background: $light-grey;
+      border: 1px solid $light-grey;
       border-radius: 10px;
     }
 
     &:focus {
-      background: #f4f0e9;
-      border: 1px solid #a6a6a6;
+      background: $light-grey;
+      border: 1px solid $grey;
       border-radius: 10px;
     }
   }
@@ -90,10 +89,9 @@
   width: 100%;
   font-size: 20px;
   line-height: 142%;
-  color: #1b1f2b;
+  color: $dark;
 
   @include tablet {
-    margin-top: 4px;
     font-size: 16px;
   }
 
@@ -107,8 +105,8 @@
     font-style: normal;
     line-height: 142%;
     resize: none;
-    background: #f9f7f4;
-    border: 1px solid #f4f0e9;
+    background: $very-light-beige;
+    border: 1px solid $light-grey;
     border-radius: 10px;
     transition:
       border 300ms ease-in,
@@ -116,20 +114,20 @@
 
     @include event-selectors {
       &:hover {
-        background: #f4f0e9;
-        border: 1px solid #f4f0e9;
+        background: $light-grey;
+        border: 1px solid $light-grey;
         border-radius: 10px;
       }
 
       &:focus {
-        background: #f4f0e9;
-        border: 1px solid #a6a6a6;
+        background: $light-grey;
+        border: 1px solid $grey;
         border-radius: 10px;
       }
     }
 
     @include tablet {
-      height: 132px;
+      height: 130px;
     }
   }
 }
@@ -172,7 +170,7 @@
       margin-right: 11px;
       cursor: pointer;
       content: '';
-      border: 2px solid #1b1f2b;
+      border: 2px solid $dark;
       border-radius: 50%;
     }
 
@@ -218,7 +216,7 @@
     align-items: center;
     font-size: 17px;
     line-height: 142%;
-    color: #a6a6a6;
+    color: $grey;
     letter-spacing: -0.01em;
 
     &::before {
@@ -229,7 +227,7 @@
       margin-right: 19px;
       cursor: pointer;
       content: '';
-      border: 2px solid #1b1f2b;
+      border: 2px solid $dark;
       border-radius: 5px;
     }
 
@@ -271,7 +269,7 @@
 
   &__contractReference {
     padding: 0.25em;
-    color: #1b1f2b;
+    color: $dark;
     transition: color 300ms ease-in;
 
     @include event-selectors {
@@ -281,7 +279,7 @@
       }
 
       &:active {
-        color: #286562;
+        color: $green;
         text-decoration-line: underline;
       }
     }
@@ -321,18 +319,18 @@
   }
 
   &__button_search {
-    color: #fff;
-    background-color: #286562;
+    color: $white;
+    background: $green;
     transition: background-color 300ms ease-in;
 
     @include event-selectors {
       &:hover {
-        color: #fff;
-        background-color: #3b7e7b;
+        color: $white;
+        background: $dark-sea-green;
       }
 
       &:active {
-        background-color: #627f7e;
+        background: $grey-green;
       }
     }
 
@@ -342,17 +340,17 @@
   }
 
   &__button_reset {
-    color: #286562;
-    background-color: #e0f0e5;
+    color: $green;
+    background: $light-green;
     transition: background-color 300ms ease-in;
 
     @include event-selectors {
       &:hover {
-        background-color: #f1f3f2;
+        background: $very-light-grey;
       }
 
       &:active {
-        background-color: #d9dfdb;
+        background: $pastel-grey;
       }
     }
   }

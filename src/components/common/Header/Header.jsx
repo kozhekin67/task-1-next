@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
 import Link from 'next/link';
-import { string } from 'prop-types';
 
 import YourTur from 'public/images/svg/YourTour.svg';
 import navigationPoints from 'src/stubs/navigationPoints';
@@ -10,7 +9,7 @@ import smoothScrolling from 'utils/smoothScrolling';
 
 import s from './Header.module.scss';
 
-const Header = ({ className }) => {
+const Header = () => {
   const [show, setShow] = useState(false);
 
   const showMenu = () => {
@@ -28,17 +27,18 @@ const Header = ({ className }) => {
     };
   }, []);
 
+  const smoothScrollingHandler = id => () => {
+    smoothScrolling(id);
+  };
+
   return (
-    <header
-      id="/header"
-      className={cx(s.root, className)}
-    >
-      <nav className={cx(s.menu, { [s.menu_scroll]: show })}>
+    <header className={cx(s.root, { [s.root_scroll]: show })}>
+      <nav className={cx(s.menu)}>
         <div className={s.yourTur}>
           <Link
-            href="#header"
+            href="#hero"
             className={s.yourTur__link}
-            onClick={() => smoothScrolling(`/header`)}
+            onClick={smoothScrollingHandler(`/hero`)}
           >
             <YourTur
               className={cx(s.yourTur__img, { [s.yourTur__img_scrool]: show })}
@@ -59,7 +59,7 @@ const Header = ({ className }) => {
                     [s.sections__link_scroll]: show,
                   })}
                   href={`#${id}`}
-                  onClick={() => smoothScrolling(`/${id}`)}
+                  onClick={smoothScrollingHandler(`/${id}`)}
                 >
                   {text}
                 </Link>
@@ -82,10 +82,6 @@ const Header = ({ className }) => {
       </nav>
     </header>
   );
-};
-
-Header.propTypes = {
-  className: string,
 };
 
 export default React.memo(Header);

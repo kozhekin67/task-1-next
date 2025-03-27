@@ -8,7 +8,10 @@ import s from 'src/components/pages/Home/Hero/Hero.module.scss';
 
 const Hero = ({ className }) => {
   return (
-    <div className={cx(s.block, className)}>
+    <div
+      id="/hero"
+      className={cx(s.block, className)}
+    >
       <div className={cx(s.block__title, s.title)}>
         <h1 className={s.title__text}>Идеальные путешествия существуют</h1>
       </div>

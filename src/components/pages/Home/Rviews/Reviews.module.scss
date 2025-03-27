@@ -2,10 +2,6 @@
   @include sectionBlock;
 }
 
-.sectionName {
-  @include sectionName;
-}
-
 .subtitleSection {
   @include subtitle-style;
 }
@@ -13,17 +9,17 @@
 .blocks {
   display: flex;
   justify-content: space-between;
-  width: 1170px;
+  width: $dekstop-width;
   margin: 100px auto 0;
 
   @include dekstop {
-    width: 89.65%;
+    width: $tablet-width;
   }
 
   @include tablet {
     flex-wrap: wrap;
     gap: 18px;
-    width: 88.33%;
+    width: $mobile-width;
     margin-top: 50px;
   }
 }
@@ -37,7 +33,7 @@
   font-size: 23px;
   font-weight: 700;
   line-height: 122%;
-  background: #f4f0e9;
+  background: $light-grey;
   border-radius: 50px;
 
   @include dekstop {
@@ -96,7 +92,7 @@
   font-size: 17px;
   font-weight: 400;
   line-height: 142%;
-  color: #a6a6a6;
+  color: $grey;
   letter-spacing: -0.01em;
 
   @include tablet {

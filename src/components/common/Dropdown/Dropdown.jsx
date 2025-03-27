@@ -39,6 +39,9 @@ const Dropdown = ({ className, name }) => {
     [name, setValue, toggleDropdown]
   );
 
+  const selectingAnItemHandler = (value, label) => () =>
+    selectingAnItem(value, label);
+
   return (
     <div className={cx(s.root, className)}>
       <div
@@ -59,7 +62,7 @@ const Dropdown = ({ className, name }) => {
             <li
               className={s.listItem}
               key={label}
-              onClick={() => selectingAnItem(value, label)}
+              onClick={selectingAnItemHandler(value, label)}
             >
               {label}
             </li>

@@ -2,15 +2,19 @@
   @include sectionBlock;
 }
 
-.sectionName {
-  @include sectionName;
+.titleBlock {
+  margin: 0 auto 40px;
+
+  @include tablet {
+    margin: 0 auto 30px;
+  }
 }
 
 .list {
   display: flex;
   justify-content: space-between;
   width: 700px;
-  margin: 40px auto 0;
+  margin: 0 auto;
 
   @include tablet {
     display: flex;
@@ -20,7 +24,6 @@
     width: 100%;
     height: auto;
     padding: 0 40px;
-    margin-top: 30px;
   }
 }
 
@@ -34,7 +37,7 @@
   position: relative;
   font-size: 23px;
   font-weight: 700;
-  color: #1b1f2b;
+  color: $dark;
   transition: color 300ms ease-in;
 
   @include event-selectors {
@@ -45,7 +48,7 @@
       width: 100%;
       height: 2px;
       content: '';
-      background-color: #1b1f2b;
+      background-color: $dark;
       transition:
         transform 300ms ease-in,
         background-color 300ms ease-in;
@@ -57,12 +60,12 @@
     }
 
     &:focus::before {
-      background-color: #efa501;
+      background-color: $orange;
       transform: scale(1, 1);
     }
 
     &:focus {
-      color: #efa501;
+      color: $orange;
     }
   }
 
@@ -76,7 +79,7 @@
       width: 0%;
       height: 0%;
       content: '';
-      background-color: #1b1f2b;
+      background-color: $dark;
       transition: all 300ms ease-in;
     }
 
@@ -93,14 +96,14 @@
   flex-wrap: wrap;
   row-gap: 30px;
   justify-content: space-between;
-  width: 1170px;
+  width: $dekstop-width;
   margin: 107px auto 0;
 
   @include dekstop {
     display: flex;
     flex-wrap: wrap;
     gap: 18px;
-    width: 89.65%;
+    width: $tablet-width;
     overflow: hidden;
   }
 
@@ -108,7 +111,7 @@
     flex-wrap: wrap;
     gap: 18px;
     justify-content: space-between;
-    width: 88.61%;
+    width: $mobile-width;
     margin: 50px auto 0;
   }
 }
@@ -149,7 +152,7 @@
     }
 
     &:hover .detailedLink {
-      background: #286562;
+      background: $green;
     }
   }
 
@@ -230,7 +233,7 @@
   @include subtitle-style;
 
   font-style: normal;
-  color: #fff;
+  color: $white;
 
   @include tablet {
     font-size: 23px;
@@ -245,7 +248,7 @@
   font-size: 17px;
   font-weight: 400;
   line-height: 142%;
-  color: #fff;
+  color: $white;
   letter-spacing: -0.01em;
 
   @include tablet {

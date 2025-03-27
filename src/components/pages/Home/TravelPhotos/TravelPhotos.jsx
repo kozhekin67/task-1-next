@@ -7,18 +7,18 @@ import travelPhotosRowFirst from 'src/stubs/travelPhotosRowFirst';
 import travelPhotosRowSecond from 'src/stubs/travelPhotosRowSecond';
 import travelPhotosRowThird from 'src/stubs/travelPhotosRowThird';
 
+import Title from 'components/Title';
+
 import s from './TravelPhotos.module.scss';
 
 const TravelPhotos = ({ className }) => {
   return (
     <section className={cx(s.root, className)}>
-      <div className={s.sectionName}>
-        <h2 className={s.sectionName__title}>Фотографии путешествий</h2>
-        <p className={s.sectionName__description}>
-          Идейные соображения высшего порядка,
-          <br />а также рамки и место обучения кадров
-        </p>
-      </div>
+      <Title
+        title="Фотографии путешествий"
+        description="Идейные соображения высшего порядка, а также рамки и место обучения
+          кадров"
+      />
       <div className={s.container}>
         {travelPhotosRowFirst.map(({ image, id }) => (
           // eslint-disable-next-line react/jsx-key

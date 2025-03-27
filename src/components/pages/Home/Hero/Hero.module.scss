@@ -1,20 +1,24 @@
 .block {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 210px 0 115px;
   background:
     linear-gradient(180deg, rgb(0 0 0 / 40%) 0%, rgb(0 0 0 / 0%) 39.9%),
     linear-gradient(0deg, rgb(0 0 0 / 30%), rgb(0 0 0 / 30%)),
     url('~public/images/headerPhoto.png') no-repeat center center;
   background-size: cover;
-  padding-bottom: 70px;
 
   @include tablet {
-    padding-bottom: 5px;
+    gap: 40px;
+    padding: 140px 0 55px;
   }
 }
 
 .title {
   width: 768px;
   margin: 0 auto;
-  color: #fff;
+  color: $white;
 
   @include tablet {
     width: 100%;
@@ -23,7 +27,6 @@
   }
 
   &__text {
-    padding-top: 210px;
     font-size: 96px;
     font-weight: 700;
     line-height: 109%;
@@ -31,7 +34,6 @@
     letter-spacing: 0.02em;
 
     @include tablet {
-      padding-top: 140px;
       font-size: 34px;
       line-height: 112%;
       letter-spacing: 0.02em;
@@ -41,32 +43,28 @@
 
 .introduction {
   width: 562px;
-  margin: 50px auto 0;
+  margin: 0 auto;
   font-size: 20px;
   line-height: 142%;
-  color: #fff;
+  color: $white;
   text-align: center;
 
   @include dekstop {
-    width: 39.16%;
-    max-width: 500px;
+    width: 405px;
   }
 
   @include tablet {
-    width: 86.11%;
-    margin-top: 40px;
+    width: 310px;
     font-size: 16px;
   }
 }
 
 .searchButton {
-  display: block;
-  width: 118px;
-  height: 38px;
-  margin: 46px auto;
+  margin: 0 auto;
+  padding: 8px 20px;
   font-size: 17px;
   text-align: center;
-  background-color: #fff;
+  background-color: $white;
   border: none;
   border-radius: 10px;
   transition:
@@ -75,22 +73,19 @@
 
   @include event_selectors {
     &:hover {
-      color: #fff;
-      background-color: #efa501;
+      color: $white;
+      background-color: $orange;
       border-radius: 10px;
     }
 
     &:active {
-      color: #1b1f2b;
-      background-color: #f8e6be;
+      color: $dark;
+      background-color: $pale-yellow;
       border-radius: 10px;
     }
   }
 
   @include tablet {
-    width: 114px;
-    height: 33px;
-    margin-top: 40px;
     font-size: 16px;
   }
 }
