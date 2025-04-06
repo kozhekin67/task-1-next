@@ -1,51 +1,46 @@
 .root {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(3);
   width: $dekstop-width;
   margin: 0 auto;
   padding: 70px;
+  gap: 30px;
   background: $white;
   border-radius: 50px;
 
   @include dekstop {
     width: $tablet-width;
     padding: 60px;
+    gap: 30px 20px;
   }
 
   @include tablet {
+    gap: 30px;
     width: $mobile-width;
-    padding: 25px 20px;
+    padding: 20px 20px 40px;
     border-radius: 30px;
   }
 }
 
 .dataField {
-  display: block;
-  width: 500px;
-  margin-bottom: 30px;
   font-size: 20px;
+  line-height: 142%;
   color: $dark;
 
-  @include dekstop {
-    width: 48.75%;
-  }
-
   @include tablet {
-    width: 100%;
-    margin-bottom: 36px;
+    grid-column: auto / span 2;
     font-size: 16px;
   }
 }
 
 .entry {
   width: 100%;
-  padding: 25px 20px;
+  padding: 20px;
   margin-top: 8px;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 142%;
   color: $dark;
   background: $very-light-beige;
   border: 1px solid $light-grey;
@@ -75,7 +70,6 @@
   }
 
   @include tablet {
-    height: 43px;
     padding: 10px;
     font-size: 16px;
 
@@ -86,7 +80,7 @@
 }
 
 .comment {
-  width: 100%;
+  grid-column: auto / span 2;
   font-size: 20px;
   line-height: 142%;
   color: $dark;
@@ -103,7 +97,6 @@
     font-family: Roboto, Arial, sans-serif;
     font-size: 20px;
     font-style: normal;
-    line-height: 142%;
     resize: none;
     background: $very-light-beige;
     border: 1px solid $light-grey;
@@ -127,25 +120,23 @@
     }
 
     @include tablet {
-      height: 130px;
+      height: 119px;
     }
   }
 }
 
 .radioGroup {
-  width: 100%;
-  margin-top: 20px;
+  grid-column: auto / span 2;
   font-size: 20px;
   line-height: 142%;
 
   @include tablet {
-    margin-top: 25px;
     font-size: 16px;
   }
 
   &__buttons {
     display: flex;
-    margin-top: 7px;
+    margin-top: 8px;
   }
 
   &__block {
@@ -202,13 +193,11 @@
 }
 
 .agreements {
-  width: 100%;
-  margin-top: 34px;
+  grid-column: auto / span 2;
   font-size: 20px;
 
   @include tablet {
     display: flex;
-    margin-top: 35px;
   }
 
   &__button {
@@ -288,21 +277,17 @@
 
 .processing {
   display: flex;
-  justify-content: space-between;
-  width: 500px;
-  margin-top: 30px;
+  grid-column: auto / span 2;
+  gap: 30px;
 
   @include tablet {
-    flex-wrap: wrap;
-    width: 278px;
-    margin-top: 30px 0 10px;
+    gap: 10px;
   }
 
   &__button {
     width: 235px;
-    padding: 15px 0;
+    padding: 20px;
     font-size: 20px;
-    line-height: 142%;
     text-align: center;
     border: none;
     border-radius: 10px;
@@ -314,7 +299,6 @@
       font-size: 16px;
       font-style: normal;
       font-weight: 400;
-      line-height: 142%;
     }
   }
 
@@ -332,10 +316,6 @@
       &:active {
         background: $grey-green;
       }
-    }
-
-    @include tablet {
-      margin: 0 10px 10px 0;
     }
   }
 

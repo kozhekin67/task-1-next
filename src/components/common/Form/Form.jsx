@@ -87,7 +87,7 @@ const Form = ({ className }) => {
           />
         </div>
         <div className={s.radioGroup}>
-          <p>Вам есть 18 лет?</p>
+          <p className={s.radioGroup__text}>Вам есть 18 лет?</p>
           <div className={s.radioGroup__buttons}>
             <div className={s.radioGroup__block}>
               <Radio
